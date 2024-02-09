@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741298BE2B6E357600617C2D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741298BD2B6E357600617C2D /* Note.swift */; };
+		7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B12B76B14E00E06277 /* Previewer.swift */; };
 		74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */; };
 		74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* ContentView.swift */; };
 		74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA292A793EC500FE6D43 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		741298BD2B6E357600617C2D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		7443C7B12B76B14E00E06277 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		74D4AA222A793EC400FE6D43 /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */,
 				74D4AA272A793EC400FE6D43 /* ContentView.swift */,
+				7443C7B12B76B14E00E06277 /* Previewer.swift */,
+				741298BD2B6E357600617C2D /* Note.swift */,
 				74D4AA292A793EC500FE6D43 /* Assets.xcassets */,
 				74D4AA2E2A793EC500FE6D43 /* Little_Note.entitlements */,
 				74D4AA2B2A793EC500FE6D43 /* Preview Content */,
@@ -85,6 +91,8 @@
 			dependencies = (
 			);
 			name = "Little Note";
+			packageProductDependencies = (
+			);
 			productName = "Little Note";
 			productReference = 74D4AA222A793EC400FE6D43 /* Little Note.app */;
 			productType = "com.apple.product-type.application";
@@ -97,7 +105,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					74D4AA212A793EC400FE6D43 = {
 						CreatedOnToolsVersion = 14.3;
@@ -113,6 +121,8 @@
 				Base,
 			);
 			mainGroup = 74D4AA192A793EC400FE6D43;
+			packageReferences = (
+			);
 			productRefGroup = 74D4AA232A793EC400FE6D43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				741298BE2B6E357600617C2D /* Note.swift in Sources */,
 				74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */,
 				74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */,
+				7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +163,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -180,9 +193,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -197,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -211,6 +226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -240,9 +256,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -251,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -269,6 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Note/Preview Content\"";
 				DEVELOPMENT_TEAM = 7HFRDKKUCK;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -296,6 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Note/Preview Content\"";
 				DEVELOPMENT_TEAM = 7HFRDKKUCK;
 				ENABLE_HARDENED_RUNTIME = YES;
