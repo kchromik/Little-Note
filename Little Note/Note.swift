@@ -31,6 +31,14 @@ class Note {
         let separators = CharacterSet(charactersIn: " \n")
         return text.components(separatedBy: separators).first ?? ""
     }
+
+    var formattedLastUpdatedDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy hh:mm"
+        dateFormatter.locale = Locale(identifier: "de_DE")
+
+        return dateFormatter.string(from: lastUpdated)
+    }
 }
 
 extension Note: Equatable {

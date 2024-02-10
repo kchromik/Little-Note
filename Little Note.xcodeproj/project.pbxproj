@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		741298BE2B6E357600617C2D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741298BD2B6E357600617C2D /* Note.swift */; };
 		7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B12B76B14E00E06277 /* Previewer.swift */; };
+		7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B32B76BE3500E06277 /* TextPad.swift */; };
 		74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */; };
 		74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* ContentView.swift */; };
 		74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA292A793EC500FE6D43 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		741298BD2B6E357600617C2D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		7443C7B12B76B14E00E06277 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
+		7443C7B32B76BE3500E06277 /* TextPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPad.swift; sourceTree = "<group>"; };
 		74D4AA222A793EC400FE6D43 /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */,
 				74D4AA272A793EC400FE6D43 /* ContentView.swift */,
+				7443C7B32B76BE3500E06277 /* TextPad.swift */,
 				7443C7B12B76B14E00E06277 /* Previewer.swift */,
 				741298BD2B6E357600617C2D /* Note.swift */,
 				74D4AA292A793EC500FE6D43 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 				74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */,
 				74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */,
 				7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */,
+				7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

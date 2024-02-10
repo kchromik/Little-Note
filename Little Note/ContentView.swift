@@ -64,10 +64,15 @@ struct ContentView: View {
 
                     Spacer()
                 }
+                .padding([.leading, .trailing])
             }
-            .padding([.top, .leading, .trailing])
+            .padding([.top])
             TextPad(note: currentNote)
                 .padding()
+            HStack {
+                Text("\(currentNote.formattedLastUpdatedDate)")
+            }
+            .foregroundStyle(Color.gray)
         }
         .onAppear {
             if notes.isEmpty {
@@ -108,17 +113,6 @@ struct ContentView: View {
         let newNote = Note()
         modelContext.insert(newNote)
         currentNoteID = newNote.id
-    }
-}
-
-struct TextPad: View {
-
-    @Bindable var note: Note
-
-    var body: some View {
-        TextEditor(text: $note.text)
-            .font(.body)
-            .background(.white)
     }
 }
 
