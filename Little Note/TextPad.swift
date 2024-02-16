@@ -13,8 +13,8 @@ struct TextPad: View {
 
     var body: some View {
         TextEditor(text: bindingForTextEditor())
+            .scrollIndicators(.hidden)
             .font(.body)
-            .background(Color.white)
     }
 
     private func bindingForTextEditor() -> Binding<String> {

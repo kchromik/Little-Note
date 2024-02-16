@@ -12,13 +12,27 @@ import HotKey
 @main
 struct Little_NoteApp: App {
 
-    private let hotkey = HotKey(key: .o, modifiers: [.control, .option, .command])
+    private let hotkey = HotKey(key: .l, modifiers: [.control, .option, .command])
     @AppStorage("hotkeyEnabled") var hotkeyEnabled: Bool = true
 
+//    init() {
+//        hotkey.keyDownHandler = { _ in
+//            guard hotkeyEnabled else { return }
+//            showMenuBarExtra.toggle()
+//        }
+//    }
+
     var body: some Scene {
-        WindowGroup {
+        MenuBarExtra(
+            "Little Note", systemImage: "pencil.line")
+        {
             ContentView()
+                .frame(
+                    minWidth: 400, maxWidth: 400,
+                    minHeight: 120, maxHeight: 400)
+                .modelContainer(for: Note.self)
         }
-        .modelContainer(for: Note.self)
+        .windowResizability(.contentSize)
+        .menuBarExtraStyle(.window)
     }
 }

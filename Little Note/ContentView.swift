@@ -36,10 +36,10 @@ struct ContentView: View {
                             .opacity(note.title.isEmpty ? 0.6 : 1.0)
                             .frame(width: 40)
                             .lineLimit(1)
-                            .foregroundColor(.white)
+                            .foregroundColor(currentNoteID == note.id ? .white : .black)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 4)
-                            .background(currentNoteID == note.id ? .blue : .gray)
+                            .background(currentNoteID == note.id ? .blue : Color.teal)
                             .cornerRadius(20)
                             .onTapGesture {
                                 switchCurrentNoteTo(note)
@@ -68,11 +68,13 @@ struct ContentView: View {
                 }
                 .padding([.leading, .trailing])
             }
+            .scrollIndicators(.hidden)
             .padding([.top])
             TextPad(note: currentNote)
                 .padding()
             HStack {
                 Text("Last updated at \(currentNote.formattedLastUpdatedDate)")
+
                 Spacer()
 
                 Button {
@@ -82,20 +84,20 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "clipboard")
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(.plain)
 
                 Button {
                     showSettings.toggle()
                 } label: {
                     Image(systemName: "gear")
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(.plain)
                 .popover(isPresented: $showSettings) {
                     SettingsView()
                 }
             }
             .padding(.horizontal)
-            .foregroundStyle(Color.gray)
+            .padding(.bottom, 4)
         }
         .onAppear {
             if notes.isEmpty {
@@ -104,7 +106,6 @@ struct ContentView: View {
                 currentNoteID = notes.first?.id
             }
         }
-        .background(.white)
     }
 
     private func delete(note: Note) {
