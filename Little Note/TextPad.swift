@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct TextPad: View {
+
     @Bindable var note: Note
 
     var body: some View {
         TextEditor(text: bindingForTextEditor())
             .font(.body)
             .background(Color.white)
-            .onAppear {
-                // Initialize your text if needed
-                // This might not be necessary if your note.text is already initialized elsewhere
-                self.note.text = ""
-            }
     }
 
     private func bindingForTextEditor() -> Binding<String> {
@@ -27,14 +23,17 @@ struct TextPad: View {
                 self.note.text
             },
             set: {
-                self.note.text = $0
+                withAnimation {
+                    note.lastUpdated = Date()
+                }
+                note.text = $0
                 checkForBulletPointInsertion(currentText: self.note.text)
             }
         )
     }
 
     private func checkForBulletPointInsertion(currentText: String) {
-        var lines = currentText.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
+        let lines = currentText.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
 
         // Detect if the user is trying to exit a bullet list by pressing Enter on an empty bullet point line
         if currentText.hasSuffix("\n") && lines.count >= 2 && lines[lines.count - 2].trimmingCharacters(in: .whitespaces) == "\u{2022}" {

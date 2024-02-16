@@ -13,11 +13,7 @@ import SwiftData
 @Model
 class Note {
 
-    var text: String = "" {
-        didSet {
-            lastUpdated = Date()
-        }
-    }
+    var text: String = ""
     var createdAt: Date
     var lastUpdated: Date
 
@@ -28,8 +24,7 @@ class Note {
     }
 
     var title: String {
-        let separators = CharacterSet(charactersIn: " \n")
-        return text.components(separatedBy: separators).first ?? ""
+        text.components(separatedBy: CharacterSet(charactersIn: " \n")).first ?? ""
     }
 
     var formattedLastUpdatedDate: String {

@@ -7,9 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import HotKey
 
 @main
 struct Little_NoteApp: App {
+
+    private let hotkey = HotKey(key: .o, modifiers: [.control, .option, .command])
+    @AppStorage("hotkeyEnabled") var hotkeyEnabled: Bool = true
 
     var body: some Scene {
         WindowGroup {

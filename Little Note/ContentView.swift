@@ -7,12 +7,14 @@
 
 import SwiftUI
 import SwiftData
+import AppKit
 
 struct ContentView: View {
 
     @Environment(\.modelContext) private var modelContext
-    @Query var notes: [Note]
+    @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
     @State private var currentNoteID: Note.ID?
+    @State private var showSettings = false
 
     @Environment(\.colorScheme) var colorScheme
 
@@ -70,8 +72,29 @@ struct ContentView: View {
             TextPad(note: currentNote)
                 .padding()
             HStack {
-                Text("\(currentNote.formattedLastUpdatedDate)")
+                Text("Last updated at \(currentNote.formattedLastUpdatedDate)")
+                Spacer()
+
+                Button {
+                    let pasteboard = NSPasteboard.general
+                    pasteboard.clearContents()
+                    pasteboard.setString(currentNote.text, forType: .string)
+                } label: {
+                    Image(systemName: "clipboard")
+                }
+                .buttonStyle(.bordered)
+
+                Button {
+                    showSettings.toggle()
+                } label: {
+                    Image(systemName: "gear")
+                }
+                .buttonStyle(.bordered)
+                .popover(isPresented: $showSettings) {
+                    SettingsView()
+                }
             }
+            .padding(.horizontal)
             .foregroundStyle(Color.gray)
         }
         .onAppear {

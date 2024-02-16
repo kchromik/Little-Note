@@ -10,6 +10,9 @@
 		741298BE2B6E357600617C2D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741298BD2B6E357600617C2D /* Note.swift */; };
 		7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B12B76B14E00E06277 /* Previewer.swift */; };
 		7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B32B76BE3500E06277 /* TextPad.swift */; };
+		74BF6B232B7FA72600DD8E9E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B222B7FA72600DD8E9E /* SettingsView.swift */; };
+		74BF6B252B7FA76600DD8E9E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */; };
+		74BF6B282B7FA80600DD8E9E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 74BF6B272B7FA80600DD8E9E /* HotKey */; };
 		74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */; };
 		74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* ContentView.swift */; };
 		74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA292A793EC500FE6D43 /* Assets.xcassets */; };
@@ -20,6 +23,8 @@
 		741298BD2B6E357600617C2D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		7443C7B12B76B14E00E06277 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		7443C7B32B76BE3500E06277 /* TextPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPad.swift; sourceTree = "<group>"; };
+		74BF6B222B7FA72600DD8E9E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		74D4AA222A793EC400FE6D43 /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BF6B282B7FA80600DD8E9E /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +67,8 @@
 				74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */,
 				74D4AA272A793EC400FE6D43 /* ContentView.swift */,
 				7443C7B32B76BE3500E06277 /* TextPad.swift */,
+				74BF6B222B7FA72600DD8E9E /* SettingsView.swift */,
+				74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */,
 				7443C7B12B76B14E00E06277 /* Previewer.swift */,
 				741298BD2B6E357600617C2D /* Note.swift */,
 				74D4AA292A793EC500FE6D43 /* Assets.xcassets */,
@@ -95,6 +103,7 @@
 			);
 			name = "Little Note";
 			packageProductDependencies = (
+				74BF6B272B7FA80600DD8E9E /* HotKey */,
 			);
 			productName = "Little Note";
 			productReference = 74D4AA222A793EC400FE6D43 /* Little Note.app */;
@@ -125,6 +134,7 @@
 			);
 			mainGroup = 74D4AA192A793EC400FE6D43;
 			packageReferences = (
+				74BF6B262B7FA80600DD8E9E /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
 			productRefGroup = 74D4AA232A793EC400FE6D43 /* Products */;
 			projectDirPath = "";
@@ -155,8 +165,10 @@
 				741298BE2B6E357600617C2D /* Note.swift in Sources */,
 				74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */,
 				74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */,
+				74BF6B232B7FA72600DD8E9E /* SettingsView.swift in Sources */,
 				7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */,
 				7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */,
+				74BF6B252B7FA76600DD8E9E /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74BF6B262B7FA80600DD8E9E /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74BF6B272B7FA80600DD8E9E /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74BF6B262B7FA80600DD8E9E /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74D4AA1A2A793EC400FE6D43 /* Project object */;
 }
