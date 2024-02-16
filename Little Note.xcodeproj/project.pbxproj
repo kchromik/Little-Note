@@ -13,6 +13,7 @@
 		74BF6B232B7FA72600DD8E9E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B222B7FA72600DD8E9E /* SettingsView.swift */; };
 		74BF6B252B7FA76600DD8E9E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */; };
 		74BF6B282B7FA80600DD8E9E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 74BF6B272B7FA80600DD8E9E /* HotKey */; };
+		74BF6B302B7FC28C00DD8E9E /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */; };
 		74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */; };
 		74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* ContentView.swift */; };
 		74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA292A793EC500FE6D43 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BF6B302B7FC28C00DD8E9E /* MenuBarExtraAccess in Frameworks */,
 				74BF6B282B7FA80600DD8E9E /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +106,7 @@
 			name = "Little Note";
 			packageProductDependencies = (
 				74BF6B272B7FA80600DD8E9E /* HotKey */,
+				74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */,
 			);
 			productName = "Little Note";
 			productReference = 74D4AA222A793EC400FE6D43 /* Little Note.app */;
@@ -135,6 +138,7 @@
 			mainGroup = 74D4AA192A793EC400FE6D43;
 			packageReferences = (
 				74BF6B262B7FA80600DD8E9E /* XCRemoteSwiftPackageReference "HotKey" */,
+				74BF6B2E2B7FC28C00DD8E9E /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */,
 			);
 			productRefGroup = 74D4AA232A793EC400FE6D43 /* Products */;
 			projectDirPath = "";
@@ -382,6 +386,14 @@
 				kind = branch;
 			};
 		};
+		74BF6B2E2B7FC28C00DD8E9E /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:orchetect/MenuBarExtraAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -389,6 +401,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74BF6B262B7FA80600DD8E9E /* XCRemoteSwiftPackageReference "HotKey" */;
 			productName = HotKey;
+		};
+		74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74BF6B2E2B7FC28C00DD8E9E /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */;
+			productName = MenuBarExtraAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

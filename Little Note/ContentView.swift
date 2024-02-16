@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import AppKit
+import HotKey
 
 struct ContentView: View {
 
@@ -15,7 +16,6 @@ struct ContentView: View {
     @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
     @State private var currentNoteID: Note.ID?
     @State private var showSettings = false
-
     @Environment(\.colorScheme) var colorScheme
 
     private var currentNote: Note {

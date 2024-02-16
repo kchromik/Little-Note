@@ -8,19 +8,26 @@
 import SwiftUI
 import SwiftData
 import HotKey
+import MenuBarExtraAccess
+
+class HotKeyViewModel: ObservableObject {
+
+    @AppStorage("hotkeyEnabled") var hotkeyEnabled: Bool = true
+    @Published var isMenuPresented: Bool = false
+    let hotkey = HotKey(key: .l, modifiers: [.control, .option, .command])
+
+    init() {
+        hotkey.keyDownHandler = { [weak self] in
+            guard self?.hotkeyEnabled == true else { return }
+            self?.isMenuPresented.toggle()
+        }
+    }
+}
 
 @main
 struct Little_NoteApp: App {
 
-    private let hotkey = HotKey(key: .l, modifiers: [.control, .option, .command])
-    @AppStorage("hotkeyEnabled") var hotkeyEnabled: Bool = true
-
-//    init() {
-//        hotkey.keyDownHandler = { _ in
-//            guard hotkeyEnabled else { return }
-//            showMenuBarExtra.toggle()
-//        }
-//    }
+    @StateObject var hotKeyViewModel = HotKeyViewModel()
 
     var body: some Scene {
         MenuBarExtra(
@@ -34,5 +41,6 @@ struct Little_NoteApp: App {
         }
         .windowResizability(.contentSize)
         .menuBarExtraStyle(.window)
+        .menuBarExtraAccess(isPresented: $hotKeyViewModel.isMenuPresented)
     }
 }
