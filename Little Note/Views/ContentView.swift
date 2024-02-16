@@ -63,6 +63,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }
+                    .keyboardShortcut("n")
 
                     Spacer()
                 }
