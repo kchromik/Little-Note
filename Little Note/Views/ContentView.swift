@@ -59,7 +59,9 @@ struct ContentView: View {
                     }
 
                     Button {
-                        addNewNote()
+                        withAnimation {
+                            addNewNote()
+                        }
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }

@@ -18,7 +18,7 @@ struct SettingsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(NSLocalizedString("launchAtLogin", comment: ""))
+                Text(NSLocalizedString("Launch at Login", comment: ""))
                     .bold()
                 Spacer()
                 Button {
