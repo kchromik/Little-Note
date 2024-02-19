@@ -87,17 +87,26 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "clipboard")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.bordered)
 
                 Button {
                     showSettings.toggle()
                 } label: {
                     Image(systemName: "gear")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.bordered)
                 .popover(isPresented: $showSettings) {
                     SettingsView()
                 }
+
+                Button {
+                    NSApplication.shared.terminate(self)
+                } label: {
+                    Image(systemName: "power")
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
+
             }
             .padding(.horizontal)
             .padding(.bottom, 4)

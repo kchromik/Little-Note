@@ -19,9 +19,8 @@ struct Little_NoteApp: App {
             "Little Note", systemImage: "pencil.line")
         {
             ContentView()
-                .frame(
-                    minWidth: 400, maxWidth: 400,
-                    minHeight: 120, maxHeight: 400)
+                .frame(width: 400)
+                .frame(minHeight: 120, maxHeight: 400)
                 .modelContainer(for: Note.self)
         }
         .windowResizability(.contentSize)
