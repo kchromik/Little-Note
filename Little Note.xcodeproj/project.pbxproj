@@ -28,6 +28,7 @@
 		74BF6B222B7FA72600DD8E9E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
+		74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Note-Info.plist"; sourceTree = SOURCE_ROOT; };
 		74D4AA222A793EC400FE6D43 /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		74D4AA242A793EC400FE6D43 /* Little Note */ = {
 			isa = PBXGroup;
 			children = (
+				74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */,
 				74BF6B332B7FC8BF00DD8E9E /* App */,
 				74BF6B342B7FC8C900DD8E9E /* Views */,
 				74BF6B352B7FC8D300DD8E9E /* ViewModels */,
@@ -349,6 +351,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Little-Note-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -379,6 +382,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Little-Note-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
