@@ -51,9 +51,25 @@ struct SettingsView: View {
                 }
                 .buttonStyle(.plain)
             }
+
+            Divider()
+
+            HStack {
+                Text(NSLocalizedString("Large text", comment: ""))
+                    .bold()
+                Spacer()
+                Button {
+                    withAnimation {
+                        viewModel.usesLargeFont.toggle()
+                    }
+                } label: {
+                    Image(systemName: viewModel.usesLargeFont ? "checkmark.square.fill" : "square")
+                }
+                .buttonStyle(.plain)
+            }
         }
         .padding()
-        .frame(width: 240)
+        .frame(width: 200)
     }
 }
 

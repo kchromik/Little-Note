@@ -1,4 +1,5 @@
 {
+  "originHash" : "68dbe4c0a3122a7459614d08a42817ea66c52b46aab6bdc209100a2f40592cdb",
   "pins" : [
     {
       "identity" : "hotkey",
@@ -19,5 +20,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

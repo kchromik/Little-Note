@@ -27,12 +27,25 @@ class Note {
         text.components(separatedBy: CharacterSet(charactersIn: " \n")).first ?? ""
     }
 
+    var formattedCreatedAtDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        dateFormatter.locale = Locale(identifier: "de_DE")
+
+        return dateFormatter.string(from: createdAt)
+    }
+
     var formattedLastUpdatedDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         dateFormatter.locale = Locale(identifier: "de_DE")
 
         return dateFormatter.string(from: lastUpdated)
+    }
+
+    var numberOfWords: Int {
+        let components = text.components(separatedBy: .whitespacesAndNewlines)
+        return components.filter { !$0.isEmpty }.count
     }
 }
 

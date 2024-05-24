@@ -16,6 +16,7 @@ struct ContentView: View {
     @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
     @State private var currentNoteID: Note.ID?
     @State private var showSettings = false
+    @State private var showNoteInfo = false
     @Environment(\.colorScheme) var colorScheme
 
     private var currentNote: Note {
@@ -71,33 +72,34 @@ struct ContentView: View {
                 }
                 .padding([.leading, .trailing])
             }
-            .scrollIndicators(.hidden)
             .padding([.top])
             TextPad(note: currentNote)
                 .padding()
             HStack {
-                Text("Last updated at \(currentNote.formattedLastUpdatedDate)")
+                HoverButton(imageName: "exclamationmark.square") {
+                    showNoteInfo.toggle()
+                }
+                .popover(isPresented: $showNoteInfo) {
+                    AnalyticsView(note: currentNote)
+                }
+                .help("Info")
 
                 Spacer()
 
-                Button {
+                HoverButton(imageName: "clipboard") {
                     let pasteboard = NSPasteboard.general
                     pasteboard.clearContents()
                     pasteboard.setString(currentNote.text, forType: .string)
-                } label: {
-                    Image(systemName: "clipboard")
                 }
-                .buttonStyle(.bordered)
+                .help("Copy to clipboard")
 
-                Button {
+                HoverButton(imageName: "gear.circle") {
                     showSettings.toggle()
-                } label: {
-                    Image(systemName: "gear")
                 }
-                .buttonStyle(.bordered)
                 .popover(isPresented: $showSettings) {
                     SettingsView()
                 }
+                .help("Settings")
 
                 Button {
                     NSApplication.shared.terminate(self)
@@ -106,7 +108,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
-
+                .help("Shutdown")
             }
             .padding(.horizontal)
             .padding(.bottom, 4)

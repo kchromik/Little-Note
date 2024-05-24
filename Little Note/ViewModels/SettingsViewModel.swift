@@ -14,6 +14,7 @@ class SettingsViewModel: ObservableObject {
     @Published var launchAtLogin: Bool
     @AppStorage("remindesUser") var remindesUser: Bool = false
     @AppStorage("hotkeyEnabled") var hotkeyEnabled: Bool = true
+    @AppStorage("usesLargeFont") var usesLargeFont: Bool = false
     private var cancellables: Set<AnyCancellable> = []
 
     init() {

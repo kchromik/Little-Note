@@ -19,11 +19,9 @@ struct Little_NoteApp: App {
             "Little Note", systemImage: "pencil.line")
         {
             ContentView()
-                .frame(width: 400)
-                .frame(minHeight: 120, maxHeight: 400)
+                .frame(width: 400, height: 320)
                 .modelContainer(for: Note.self)
         }
-        .windowResizability(.contentSize)
         .menuBarExtraStyle(.window)
         .menuBarExtraAccess(isPresented: $hotKeyViewModel.isMenuPresented)
     }
