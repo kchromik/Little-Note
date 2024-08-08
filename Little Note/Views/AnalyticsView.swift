@@ -5,6 +5,7 @@
 //  Created by Kevin Chromik on 24.05.24.
 //
 
+import LittleBase
 import SwiftUI
 
 struct AnalyticsView: View {

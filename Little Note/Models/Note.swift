@@ -1,62 +1,60 @@
+////
+////  Note.swift
+////  Little Note
+////
+////  Created by Kevin Chromik on 03.02.24.
+////
 //
-//  Note.swift
-//  Little Note
+//import Foundation
+//import SwiftData
 //
-//  Created by Kevin Chromik on 03.02.24.
+//@Model
+//class Note {
 //
-
-import Foundation
-
-import Foundation
-import SwiftData
-
-@Model
-class Note {
-
-    var text: String = ""
-    var createdAt: Date
-    var lastUpdated: Date
-
-    init() {
-        let date = Date()
-        createdAt = date
-        lastUpdated = date
-    }
-
-    var title: String {
-        text.components(separatedBy: CharacterSet(charactersIn: " \n")).first ?? ""
-    }
-
-    var formattedCreatedAtDate: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
-        dateFormatter.locale = Locale(identifier: "de_DE")
-
-        return dateFormatter.string(from: createdAt)
-    }
-
-    var formattedLastUpdatedDate: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
-        dateFormatter.locale = Locale(identifier: "de_DE")
-
-        return dateFormatter.string(from: lastUpdated)
-    }
-
-    var numberOfWords: Int {
-        let components = text.components(separatedBy: .whitespacesAndNewlines)
-        return components.filter { !$0.isEmpty }.count
-    }
-}
-
-extension Note: Equatable {
-    static func == (lhs: Note, rhs: Note) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-extension Note: Identifiable {
-    var id: String {
-        createdAt.description
-    }
-}
+//    var text: String = ""
+//    var createdAt: Date
+//    var lastUpdated: Date
+//
+//    init() {
+//        let date = Date()
+//        createdAt = date
+//        lastUpdated = date
+//    }
+//
+//    var title: String {
+//        text.components(separatedBy: CharacterSet(charactersIn: " \n")).first ?? ""
+//    }
+//
+//    var formattedCreatedAtDate: String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+//        dateFormatter.locale = Locale(identifier: "de_DE")
+//
+//        return dateFormatter.string(from: createdAt)
+//    }
+//
+//    var formattedLastUpdatedDate: String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+//        dateFormatter.locale = Locale(identifier: "de_DE")
+//
+//        return dateFormatter.string(from: lastUpdated)
+//    }
+//
+//    var numberOfWords: Int {
+//        let components = text.components(separatedBy: .whitespacesAndNewlines)
+//        return components.filter { !$0.isEmpty }.count
+//    }
+//}
+//
+//extension Note: Equatable {
+//    static func == (lhs: Note, rhs: Note) -> Bool {
+//        lhs.id == rhs.id
+//    }
+//}
+//
+//extension Note: Identifiable {
+//    var id: String {
+//        createdAt.description
+//    }
+//}

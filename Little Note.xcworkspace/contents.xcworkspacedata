@@ -7,4 +7,7 @@
    <FileRef
       location = "group:/Users/kchromik/Development/Little Note/Little Note macOS.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:LittleBase/LittleBase.xcodeproj">
+   </FileRef>
 </Workspace>

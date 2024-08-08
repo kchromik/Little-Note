@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74015AF82C650A8200BBDB21 /* LittleBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74015AF72C650A8200BBDB21 /* LittleBase.framework */; };
+		74015AF92C650A8200BBDB21 /* LittleBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74015AF72C650A8200BBDB21 /* LittleBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */; };
 		74D80A452C64FD690011016D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* ContentView.swift */; };
 		74D80A472C64FD6A0011016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A462C64FD6A0011016D /* Assets.xcassets */; };
 		74D80A4A2C64FD6A0011016D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A492C64FD6A0011016D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		74015AFA2C650A8200BBDB21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				74015AF92C650A8200BBDB21 /* LittleBase.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		74015AF72C650A8200BBDB21 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Note iOS.entitlements"; sourceTree = "<group>"; };
 		7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Note-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		74D80A3F2C64FD690011016D /* Little Note iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,17 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74015AF82C650A8200BBDB21 /* LittleBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		745F36752C64FFBF00F6D0CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74015AF72C650A8200BBDB21 /* LittleBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74D80A362C64FD690011016D = {
 			isa = PBXGroup;
 			children = (
 				74D80A412C64FD690011016D /* Little Note iOS */,
 				74D80A402C64FD690011016D /* Products */,
+				745F36752C64FFBF00F6D0CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +108,7 @@
 				74D80A3B2C64FD690011016D /* Sources */,
 				74D80A3C2C64FD690011016D /* Frameworks */,
 				74D80A3D2C64FD690011016D /* Resources */,
+				74015AFA2C650A8200BBDB21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +309,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Little-Note-iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Little Note";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -312,6 +342,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Little-Note-iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Little Note";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

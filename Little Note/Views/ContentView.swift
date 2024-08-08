@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import AppKit
 import HotKey
+import LittleBase
 
 struct ContentView: View {
 

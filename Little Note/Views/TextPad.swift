@@ -5,6 +5,7 @@
 //  Created by Kevin Chromik on 09.02.24.
 //
 
+import LittleBase
 import SwiftUI
 
 struct TextPad: View {

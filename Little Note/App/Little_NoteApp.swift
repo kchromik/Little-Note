@@ -5,6 +5,7 @@
 //  Created by Kevin Chromik on 01.08.23.
 //
 
+import LittleBase
 import SwiftUI
 import SwiftData
 import MenuBarExtraAccess
