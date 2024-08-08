@@ -31,7 +31,7 @@
 		74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
 		74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Note-Info.plist"; sourceTree = SOURCE_ROOT; };
-		74D4AA222A793EC400FE6D43 /* Little Note macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D4AA222A793EC400FE6D43 /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74D4AA292A793EC500FE6D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		74D4AA232A793EC400FE6D43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74D4AA222A793EC400FE6D43 /* Little Note macOS.app */,
+				74D4AA222A793EC400FE6D43 /* Little Note.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74D4AA212A793EC400FE6D43 /* Little Note macOS */ = {
+		74D4AA212A793EC400FE6D43 /* Little Note */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note macOS" */;
+			buildConfigurationList = 74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note" */;
 			buildPhases = (
 				74D4AA1E2A793EC400FE6D43 /* Sources */,
 				74D4AA1F2A793EC400FE6D43 /* Frameworks */,
@@ -146,13 +146,13 @@
 			);
 			dependencies = (
 			);
-			name = "Little Note macOS";
+			name = "Little Note";
 			packageProductDependencies = (
 				74BF6B272B7FA80600DD8E9E /* HotKey */,
 				74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */,
 			);
 			productName = "Little Note";
-			productReference = 74D4AA222A793EC400FE6D43 /* Little Note macOS.app */;
+			productReference = 74D4AA222A793EC400FE6D43 /* Little Note.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74D4AA212A793EC400FE6D43 /* Little Note macOS */,
+				74D4AA212A793EC400FE6D43 /* Little Note */,
 			);
 		};
 /* End PBXProject section */
@@ -418,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note macOS" */ = {
+		74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74D4AA322A793EC500FE6D43 /* Debug */,

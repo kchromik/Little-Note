@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Little Note iOS/Little Note iOS.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:/Users/kchromik/Development/Little Note/Little Note macOS.xcodeproj">
    </FileRef>
 </Workspace>
