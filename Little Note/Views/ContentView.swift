@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var currentNoteID: Note.ID?
     @State private var showSettings = false
     @State private var showNoteInfo = false
+    @State private var showCopiedMessage = false
     @Environment(\.colorScheme) var colorScheme
 
     private var currentNote: Note {
@@ -28,91 +29,120 @@ struct ContentView: View {
     }
 
     var body: some View {
-        VStack {
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(notes, id: \.id) { note in
-                        Text(note.title.isEmpty ? "Note" : note.title)
-                            .font(.footnote)
-                            .opacity(note.title.isEmpty ? 0.6 : 1.0)
-                            .frame(width: 40)
-                            .lineLimit(1)
-                            .foregroundColor(currentNoteID == note.id ? .white : .black)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(currentNoteID == note.id ? .blue : Color.teal)
-                            .cornerRadius(20)
-                            .onTapGesture {
-                                switchCurrentNoteTo(note)
-                            }
-                            .contextMenu {
-                                if notes.count > 1 {
-                                    Button(action: {
-                                        withAnimation {
-                                            delete(note: note)
+        ZStack {
+            VStack {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(notes, id: \.id) { note in
+                            Text(note.title.isEmpty ? "Note" : note.title)
+                                .font(.footnote)
+                                .opacity(note.title.isEmpty ? 0.6 : 1.0)
+                                .frame(width: 40)
+                                .lineLimit(1)
+                                .foregroundColor(currentNoteID == note.id ? .white : .black)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(currentNoteID == note.id ? .blue : Color.teal)
+                                .cornerRadius(20)
+                                .onTapGesture {
+                                    switchCurrentNoteTo(note)
+                                }
+                                .contextMenu {
+                                    if notes.count > 1 {
+                                        Button(action: {
+                                            withAnimation {
+                                                delete(note: note)
+                                            }
+                                        }) {
+                                            Text("Delete")
+                                                .foregroundColor(.red)
                                         }
-                                    }) {
-                                        Text("Delete")
-                                            .foregroundColor(.red)
                                     }
                                 }
-                            }
-                    }
-
-                    Button {
-                        withAnimation {
-                            addNewNote()
                         }
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
+
+                        Button {
+                            withAnimation {
+                                addNewNote()
+                            }
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                        }
+                        .keyboardShortcut("n")
+
+                        Spacer()
                     }
-                    .keyboardShortcut("n")
+                    .padding([.leading, .trailing])
+                }
+                .padding([.top])
+                TextPad(note: currentNote)
+                    .padding()
+                HStack {
+                    HoverButton(imageName: "exclamationmark.square") {
+                        showNoteInfo.toggle()
+                    }
+                    .popover(isPresented: $showNoteInfo) {
+                        AnalyticsView(note: currentNote)
+                    }
+                    .help("Info")
 
                     Spacer()
+
+                    HoverButton(imageName: "clipboard") {
+                        let pasteboard = NSPasteboard.general
+                        pasteboard.clearContents()
+                        pasteboard.setString(currentNote.text, forType: .string)
+                        guard !showCopiedMessage else { return }
+                        withAnimation {
+                            showCopiedMessage = true
+                        }
+
+                        // Hide the copied message after 2 seconds
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                showCopiedMessage = false
+                            }
+                        }
+
+                    }
+                    .help("Copy to clipboard")
+
+                    HoverButton(imageName: "gear.circle") {
+                        showSettings.toggle()
+                    }
+                    .popover(isPresented: $showSettings) {
+                        SettingsView()
+                    }
+                    .help("Settings")
+
+                    Button {
+                        NSApplication.shared.terminate(self)
+                    } label: {
+                        Image(systemName: "power")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.red)
+                    .help("Shutdown")
                 }
-                .padding([.leading, .trailing])
+                .padding(.horizontal)
+                .padding(.bottom, 4)
             }
-            .padding([.top])
-            TextPad(note: currentNote)
-                .padding()
-            HStack {
-                HoverButton(imageName: "exclamationmark.square") {
-                    showNoteInfo.toggle()
-                }
-                .popover(isPresented: $showNoteInfo) {
-                    AnalyticsView(note: currentNote)
-                }
-                .help("Info")
 
-                Spacer()
-
-                HoverButton(imageName: "clipboard") {
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.clearContents()
-                    pasteboard.setString(currentNote.text, forType: .string)
+            if showCopiedMessage {
+                VStack {
+                    Spacer()
+                    Text("Copied to clipboard")
+                        .foregroundColor(.white)
+                        .padding(8)
+                        .background(Color.black.opacity(0.8))
+                        .cornerRadius(12)
+                        .padding(.bottom, 12)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .zIndex(1)
                 }
-                .help("Copy to clipboard")
-
-                HoverButton(imageName: "gear.circle") {
-                    showSettings.toggle()
-                }
-                .popover(isPresented: $showSettings) {
-                    SettingsView()
-                }
-                .help("Settings")
-
-                Button {
-                    NSApplication.shared.terminate(self)
-                } label: {
-                    Image(systemName: "power")
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.red)
-                .help("Shutdown")
             }
-            .padding(.horizontal)
-            .padding(.bottom, 4)
         }
+
         .onAppear {
             if notes.isEmpty {
                 addNewNote()

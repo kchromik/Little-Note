@@ -19,13 +19,13 @@ struct AnalyticsView: View {
                 Text("\(note.numberOfWords)")
             }
             HStack {
-                Text("Created at")
+                Text("Created")
                 Spacer()
                 Text("\(note.formattedCreatedAtDate)")
             }
 
             HStack {
-                Text("Last updated at")
+                Text("Updated")
                 Spacer()
                 Text("\(note.formattedLastUpdatedDate)")
             }
