@@ -15,8 +15,8 @@ struct TextPad: View {
 
     var body: some View {
         TextEditor(text: bindingForTextEditor())
+//            .font(.custom("AmericanTypewriter", size: usesLargeFont ? 18 : 14))
             .font(.system(size: usesLargeFont ? 18 : 14, weight: .regular, design: .rounded))
-//            .font(usesLargeFont ? .headline : .body)
     }
 
     private func bindingForTextEditor() -> Binding<String> {

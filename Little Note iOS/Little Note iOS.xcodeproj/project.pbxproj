@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		74015AF82C650A8200BBDB21 /* LittleBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74015AF72C650A8200BBDB21 /* LittleBase.framework */; };
 		74015AF92C650A8200BBDB21 /* LittleBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74015AF72C650A8200BBDB21 /* LittleBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		74015AFE2C65113C00BBDB21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015AFD2C65113C00BBDB21 /* DetailView.swift */; };
+		74015B042C6514DF00BBDB21 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015B032C6514DF00BBDB21 /* Cell.swift */; };
+		7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480F69B2C73715000899E30 /* FloatingButtons.swift */; };
 		74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */; };
 		74D80A452C64FD690011016D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* ContentView.swift */; };
 		74D80A472C64FD6A0011016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A462C64FD6A0011016D /* Assets.xcassets */; };
@@ -31,8 +34,11 @@
 
 /* Begin PBXFileReference section */
 		74015AF72C650A8200BBDB21 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74015AFD2C65113C00BBDB21 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		74015B032C6514DF00BBDB21 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Note iOS.entitlements"; sourceTree = "<group>"; };
 		7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Note-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
+		7480F69B2C73715000899E30 /* FloatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtons.swift; sourceTree = "<group>"; };
 		74D80A3F2C64FD690011016D /* Little Note iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_Note_iOSApp.swift; sourceTree = "<group>"; };
 		74D80A442C64FD690011016D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +58,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74015B012C65145200BBDB21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74D80A442C64FD690011016D /* ContentView.swift */,
+				74015AFD2C65113C00BBDB21 /* DetailView.swift */,
+				74015B032C6514DF00BBDB21 /* Cell.swift */,
+				7480F69B2C73715000899E30 /* FloatingButtons.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74015B022C65146B00BBDB21 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		745F36752C64FFBF00F6D0CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,11 +105,11 @@
 		74D80A412C64FD690011016D /* Little Note iOS */ = {
 			isa = PBXGroup;
 			children = (
+				74015B022C65146B00BBDB21 /* App */,
+				74015B012C65145200BBDB21 /* Views */,
+				74D80A462C64FD6A0011016D /* Assets.xcassets */,
 				7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */,
 				7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */,
-				74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */,
-				74D80A442C64FD690011016D /* ContentView.swift */,
-				74D80A462C64FD6A0011016D /* Assets.xcassets */,
 				74D80A482C64FD6A0011016D /* Preview Content */,
 			);
 			path = "Little Note iOS";
@@ -170,6 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D80A452C64FD690011016D /* ContentView.swift in Sources */,
+				7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */,
+				74015B042C6514DF00BBDB21 /* Cell.swift in Sources */,
+				74015AFE2C65113C00BBDB21 /* DetailView.swift in Sources */,
 				74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

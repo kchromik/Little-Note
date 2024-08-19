@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		741298BE2B6E357600617C2D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741298BD2B6E357600617C2D /* Note.swift */; };
-		7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B12B76B14E00E06277 /* Previewer.swift */; };
 		7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B32B76BE3500E06277 /* TextPad.swift */; };
 		748B9CA52C6507FD007E8706 /* LittleBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; };
 		748B9CA62C6507FD007E8706 /* LittleBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -40,15 +38,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		741298BD2B6E357600617C2D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		7443C7B12B76B14E00E06277 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		7443C7B32B76BE3500E06277 /* TextPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPad.swift; sourceTree = "<group>"; };
 		748B9CA42C6507FD007E8706 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74BF6B222B7FA72600DD8E9E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
 		74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Note-Info.plist"; sourceTree = SOURCE_ROOT; };
-		74D4AA222A793EC400FE6D43 /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D4AA222A793EC400FE6D43 /* Little Note macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74D4AA292A793EC500FE6D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,14 +105,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		74BF6B362B7FC8DC00DD8E9E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				741298BD2B6E357600617C2D /* Note.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		74D4AA192A793EC400FE6D43 = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +117,7 @@
 		74D4AA232A793EC400FE6D43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74D4AA222A793EC400FE6D43 /* Little Note.app */,
+				74D4AA222A793EC400FE6D43 /* Little Note macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,8 +129,6 @@
 				74BF6B332B7FC8BF00DD8E9E /* App */,
 				74BF6B342B7FC8C900DD8E9E /* Views */,
 				74BF6B352B7FC8D300DD8E9E /* ViewModels */,
-				7443C7B12B76B14E00E06277 /* Previewer.swift */,
-				74BF6B362B7FC8DC00DD8E9E /* Models */,
 				74D4AA292A793EC500FE6D43 /* Assets.xcassets */,
 				74D4AA2E2A793EC500FE6D43 /* Little_Note.entitlements */,
 				74D4AA2B2A793EC500FE6D43 /* Preview Content */,
@@ -161,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74D4AA212A793EC400FE6D43 /* Little Note */ = {
+		74D4AA212A793EC400FE6D43 /* Little Note macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note" */;
+			buildConfigurationList = 74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note macOS" */;
 			buildPhases = (
 				74D4AA1E2A793EC400FE6D43 /* Sources */,
 				74D4AA1F2A793EC400FE6D43 /* Frameworks */,
@@ -174,13 +160,13 @@
 			);
 			dependencies = (
 			);
-			name = "Little Note";
+			name = "Little Note macOS";
 			packageProductDependencies = (
 				74BF6B272B7FA80600DD8E9E /* HotKey */,
 				74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */,
 			);
 			productName = "Little Note";
-			productReference = 74D4AA222A793EC400FE6D43 /* Little Note.app */;
+			productReference = 74D4AA222A793EC400FE6D43 /* Little Note macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74D4AA212A793EC400FE6D43 /* Little Note */,
+				74D4AA212A793EC400FE6D43 /* Little Note macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -238,13 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74BF6B322B7FC89800DD8E9E /* HotKeyViewModel.swift in Sources */,
-				741298BE2B6E357600617C2D /* Note.swift in Sources */,
 				74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */,
 				74F8C8A82C00B4F4000FF75C /* AnalyticsView.swift in Sources */,
 				74F8C8A62C00B112000FF75C /* HoverButton.swift in Sources */,
 				74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */,
 				74BF6B232B7FA72600DD8E9E /* SettingsView.swift in Sources */,
-				7443C7B22B76B14E00E06277 /* Previewer.swift in Sources */,
 				7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */,
 				74BF6B252B7FA76600DD8E9E /* SettingsViewModel.swift in Sources */,
 			);
@@ -448,7 +432,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note" */ = {
+		74D4AA312A793EC500FE6D43 /* Build configuration list for PBXNativeTarget "Little Note macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74D4AA322A793EC500FE6D43 /* Debug */,
