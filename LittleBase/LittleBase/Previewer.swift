@@ -28,7 +28,7 @@ public struct Previewer {
 
 
         container.mainContext.insert(note2)
-        container.mainContext.insert(note1)
-        container.mainContext.insert(note3)
+//        container.mainContext.insert(note1)
+//        container.mainContext.insert(note3)
     }
 }

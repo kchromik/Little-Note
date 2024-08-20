@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Cell: View {
 
+    @State private var showingDetails = false
     let note: Note
 
     var body: some View {
@@ -30,6 +31,12 @@ struct Cell: View {
 
                 Spacer()
             }
+        }
+        .onTapGesture {
+            showingDetails.toggle()
+        }
+        .sheet(isPresented: $showingDetails) {
+            DetailView(note: note)
         }
         .padding()
         .background(Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0))

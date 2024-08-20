@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct FloatingButtons: View {
+
     var body: some View {
         HStack(spacing: 12) {
             Button {
@@ -30,11 +31,10 @@ struct FloatingButtons: View {
             }
         }
         .padding(.vertical, 8)
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 8)
         .background(.thinMaterial)
         .clipShape(Capsule())
-        .shadow(radius: 10)
-        .padding()
+        .shadow(radius: 8)
     }
 }
 

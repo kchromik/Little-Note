@@ -8,10 +8,11 @@
 import LittleBase
 import SwiftUI
 
-import SwiftUI
-
 struct DetailView: View {
-    let note: Note
+
+    @Environment(\.dismiss) var dismiss
+
+    @Bindable var note: Note
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -19,9 +20,9 @@ struct DetailView: View {
                 .foregroundStyle(Color(red: 172.0/255.0, green: 142.0/255.0, blue: 34.0/255.0))
                 .font(.headline)
 
-            Text(note.text)
-                .foregroundStyle(.black)
+            TextEditor(text: $note.text)
                 .font(.body)
+                .scrollContentBackground(.hidden)
 
             HStack {
                 Text("\(note.numberOfWords) words")
@@ -41,6 +42,8 @@ struct DetailView: View {
         .background(Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0))
         .clipShape(RoundedRectangle(cornerRadius: 32))
         .shadow(color: .gray.opacity(0.4), radius: 4)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
     }
 }
 

@@ -13,7 +13,6 @@ struct ContentView: View {
 
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
-    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
     var body: some View {
         NavigationStack {
@@ -26,6 +25,7 @@ struct ContentView: View {
                     .onDelete(perform: deleteNote)
                 }
                 .listStyle(.plain)
+                .listRowSpacing(0)
 
                 VStack {
                     Spacer()
