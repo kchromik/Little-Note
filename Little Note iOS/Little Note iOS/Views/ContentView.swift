@@ -17,26 +17,44 @@ struct ContentView: View {
     @State private var showingDetails = false
     @State private var currentNote: Note?
     @State private var isEditing = false
+    @State private var currentFilter: Filter = .all
 
     var body: some View {
         ZStack {
-            List {
-                ForEach(notes) { note in
-                    Cell(note: note)
-                        .listRowSeparator(.hidden)
-                        .onTapGesture {
-                            isEditing = true
-                            currentNote = note
-                            withAnimation {
-                                showingDetails.toggle()
-                            }
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(Filter.allCases, id: \.self) { filter in
+                            FilterView(filter: filter, isActive: .constant(currentFilter == filter), numberOfItems: filteredNotes(for: filter).count)
+                                .onTapGesture {
+                                    withAnimation {
+                                        currentFilter = filter
+                                    }
+                                }
                         }
+                    }
+                    .padding()
                 }
-                .onDelete(perform: deleteNote)
+
+                List {
+                    ForEach(filteredNotes) { note in
+                        Cell(note: note)
+                            .listRowSeparator(.hidden)
+                            .onTapGesture {
+                                isEditing = true
+                                currentNote = note
+                                withAnimation {
+                                    showingDetails.toggle()
+                                }
+                            }
+                    }
+                    .onDelete(perform: deleteNote)
+                }
+                .listStyle(.plain)
+                .listRowSpacing(0)
+                .animation(.default, value: notes)
             }
-            .listStyle(.plain)
-            .listRowSpacing(0)
-            .animation(.default, value: notes)
+
 
             VStack {
                 Spacer()
@@ -56,6 +74,24 @@ struct ContentView: View {
             if newValue && !isEditing {
                 currentNote = Note()
             }
+        }
+    }
+
+    private var filteredNotes: [Note] {
+        switch currentFilter {
+        case .all:
+            return notes
+        case .favorite:
+            return notes.filter { $0.isFavourite }
+        }
+    }
+
+    private func filteredNotes(for filter: Filter) -> [Note] {
+        switch filter {
+        case .all:
+            return notes
+        case .favorite:
+            return notes.filter { $0.isFavourite }
         }
     }
 

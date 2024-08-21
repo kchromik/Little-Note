@@ -22,9 +22,11 @@ struct DetailView: View {
 
             TextField("Enter title", text: $note.customTitle)
                 .font(.title)
+                .foregroundStyle(.black)
 
             TextEditor(text: $note.text)
                 .font(.body)
+                .foregroundStyle(.black)
                 .scrollContentBackground(.hidden)
 
             HStack {
