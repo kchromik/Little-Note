@@ -14,28 +14,66 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
 
-    var body: some View {
-        NavigationStack {
-            ZStack {
-                List {
-                    ForEach(notes, id: \.self) { note in
-                        Cell(note: note)
-                            .listRowSeparator(.hidden)
-                    }
-                    .onDelete(perform: deleteNote)
-                }
-                .listStyle(.plain)
-                .listRowSpacing(0)
+    @State private var showingDetails = false
+    @State private var currentNote: Note?
+    @State private var isEditing = false
 
-                VStack {
-                    Spacer()
-                    FloatingButtons()
+    var body: some View {
+        ZStack {
+            List {
+                ForEach(notes) { note in
+                    Cell(note: note)
+                        .listRowSeparator(.hidden)
+                        .onTapGesture {
+                            isEditing = true
+                            currentNote = note
+                            withAnimation {
+                                showingDetails.toggle()
+                            }
+                        }
                 }
+                .onDelete(perform: deleteNote)
             }
-            .navigationTitle("My Notes")
+            .listStyle(.plain)
+            .listRowSpacing(0)
+            .animation(.default, value: notes)
+
+            VStack {
+                Spacer()
+                FloatingButtons(showingDetails: $showingDetails)
+            }
+            .padding(.bottom, 12)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .ignoresSafeArea()
+        .sheet(isPresented: $showingDetails, onDismiss: saveCurrentNoteIfNotEmpty) {
+            if let note = currentNote {
+                DetailView(note: note)
+                    .presentationDetents([.medium, .large])
+                    .presentationCornerRadius(32)
+                    .presentationDragIndicator(.visible)
+            }
+        }
+        .onChange(of: showingDetails) { oldValue, newValue in
+            if newValue && !isEditing {
+                currentNote = Note()
+            }
+        }
+    }
+
+    private func saveCurrentNoteIfNotEmpty() {
+        defer {
+            currentNote = nil
+        }
+        guard let currentNote = currentNote, !currentNote.text.isEmpty else {
+            return
+        }
+
+        // If creating a new note, add it to the model context with animation.
+        if !isEditing {
+            modelContext.insert(currentNote)
+        }
+
+        // Reset editing flag after saving
+        isEditing = false
     }
 
     private func deleteNote(at offsets: IndexSet) {

@@ -11,19 +11,27 @@ import SwiftData
 @Model
 public class Note {
 
+    public var customTitle: String = ""
     public var text: String = ""
     public private(set) var createdAt: Date = Date()
     public var lastUpdated: Date = Date()
+    public var isFavourite: Bool = false
 
-    public init(with text: String = "") {
+    private var uuidString: String = ""
+
+    public init(title: String = "", text: String = "") {
+        self.customTitle = title
         self.text = text
+        self.uuidString = UUID().uuidString
     }
 
     public var title: String {
-        text.components(separatedBy: CharacterSet(charactersIn: " \n")).first ?? ""
+        guard !customTitle.isEmpty else {
+            return text.components(separatedBy: CharacterSet(charactersIn: " \n")).first ?? ""
+        }
+        return customTitle
     }
 
-    @Attribute(.unique)
     public var formattedCreatedAtDate: String {
         let dateFormatter = DateFormatter()
 
@@ -64,7 +72,8 @@ extension Note: Equatable {
 
 extension Note: Identifiable {
 
+    @Attribute(.unique)
     public var id: String {
-        createdAt.description
+        uuidString
     }
 }

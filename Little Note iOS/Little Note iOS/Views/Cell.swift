@@ -10,33 +10,48 @@ import SwiftUI
 
 struct Cell: View {
 
-    @State private var showingDetails = false
-    let note: Note
+    @Bindable var note: Note
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(note.formattedCreatedAtDate)
-                .foregroundStyle(Color(red: 172.0/255.0, green: 142.0/255.0, blue: 34.0/255.0))
-                .font(.footnote)
-            Text(note.text)
-                .foregroundStyle(.black)
-                .lineLimit(3)
+        ZStack {
             HStack {
-                Text("\(note.numberOfWords) words")
-                    .font(.footnote)
-                    .foregroundStyle(.black)
-                    .padding(8)
-                    .background(Color(red: 227.0/255.0, green: 211.0/255.0, blue: 64.0/255.0))
-                    .cornerRadius(12)
-
                 Spacer()
+                VStack {
+                    Image(systemName: note.isFavourite ? "heart.fill" : "heart")
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+            }
+
+            VStack(alignment: .leading) {
+                Text(note.formattedCreatedAtDate)
+                    .foregroundStyle(Color(red: 172.0/255.0, green: 142.0/255.0, blue: 34.0/255.0))
+                    .font(.footnote)
+                Text(note.title)
+                    .foregroundStyle(.black)
+                    .lineLimit(3)
+                HStack {
+                    Text("\(note.numberOfWords) words")
+                        .font(.footnote)
+                        .foregroundStyle(.black)
+                        .padding(8)
+                        .background(Color(red: 227.0/255.0, green: 211.0/255.0, blue: 64.0/255.0))
+                        .cornerRadius(12)
+
+                    Spacer()
+                }
             }
         }
-        .onTapGesture {
-            showingDetails.toggle()
-        }
-        .sheet(isPresented: $showingDetails) {
-            DetailView(note: note)
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            Button {
+                note.isFavourite.toggle()
+            } label: {
+                Image(systemName: note.isFavourite ? "heart.fill" : "heart")
+                    .frame(width: 44, height: 44)
+                    .foregroundColor(.black)
+                    .tint(.green)
+            }
         }
         .padding()
         .background(Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0))
@@ -49,11 +64,9 @@ struct Cell: View {
         do {
             let previewer = try Previewer()
 
-            return ContentView()
+            return Cell(note: Note(title: "this is a title", text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."))
                 .modelContainer(previewer.container)
         } catch {
             return Text("Failed to create preview: \(error.localizedDescription)")
         }
-
-    return Cell(note: Note(with: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."))
 }
