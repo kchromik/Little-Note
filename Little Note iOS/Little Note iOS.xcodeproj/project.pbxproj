@@ -12,6 +12,7 @@
 		74015AFE2C65113C00BBDB21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015AFD2C65113C00BBDB21 /* DetailView.swift */; };
 		74015B042C6514DF00BBDB21 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015B032C6514DF00BBDB21 /* Cell.swift */; };
 		744FF55A2C75F1C900A43C32 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF5592C75F1C900A43C32 /* FilterView.swift */; };
+		744FF55C2C7644C900A43C32 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF55B2C7644C900A43C32 /* EmptyListView.swift */; };
 		7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480F69B2C73715000899E30 /* FloatingButtons.swift */; };
 		74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */; };
 		74D80A452C64FD690011016D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		74015AFD2C65113C00BBDB21 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		74015B032C6514DF00BBDB21 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		744FF5592C75F1C900A43C32 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		744FF55B2C7644C900A43C32 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Note iOS.entitlements"; sourceTree = "<group>"; };
 		7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Note-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7480F69B2C73715000899E30 /* FloatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtons.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				74015B032C6514DF00BBDB21 /* Cell.swift */,
 				7480F69B2C73715000899E30 /* FloatingButtons.swift */,
 				744FF5592C75F1C900A43C32 /* FilterView.swift */,
+				744FF55B2C7644C900A43C32 /* EmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				74D80A452C64FD690011016D /* ContentView.swift in Sources */,
 				7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */,
+				744FF55C2C7644C900A43C32 /* EmptyListView.swift in Sources */,
 				74015B042C6514DF00BBDB21 /* Cell.swift in Sources */,
 				74015AFE2C65113C00BBDB21 /* DetailView.swift in Sources */,
 				744FF55A2C75F1C900A43C32 /* FilterView.swift in Sources */,

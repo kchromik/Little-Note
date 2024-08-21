@@ -21,39 +21,49 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        ForEach(Filter.allCases, id: \.self) { filter in
-                            FilterView(filter: filter, isActive: .constant(currentFilter == filter), numberOfItems: filteredNotes(for: filter).count)
+            if notes.isEmpty {
+                EmptyListView()
+            } else {
+                VStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(Filter.allCases, id: \.self) { filter in
+                                FilterView(
+                                    filter: filter,
+                                    isActive: currentFilter == filter
+                                )
                                 .onTapGesture {
                                     withAnimation {
                                         currentFilter = filter
                                     }
                                 }
-                        }
-                    }
-                    .padding()
-                }
-
-                List {
-                    ForEach(filteredNotes) { note in
-                        Cell(note: note)
-                            .listRowSeparator(.hidden)
-                            .onTapGesture {
-                                isEditing = true
-                                currentNote = note
-                                withAnimation {
-                                    showingDetails.toggle()
-                                }
                             }
+                        }
+                        .padding()
                     }
-                    .onDelete(perform: deleteNote)
+
+                        List {
+                            ForEach(filteredNotes) { note in
+                                Cell(note: note)
+                                    .listRowSeparator(.hidden)
+                                    .onTapGesture {
+                                        isEditing = true
+                                        currentNote = note
+                                        withAnimation {
+                                            showingDetails.toggle()
+                                        }
+                                    }
+                            }
+                            .onDelete(perform: deleteNote)
+
+                        }
+                        .listStyle(.plain)
+                        .listRowSpacing(0)
+                        .animation(.default, value: filteredNotes)
+
                 }
-                .listStyle(.plain)
-                .listRowSpacing(0)
-                .animation(.default, value: notes)
             }
+
 
 
             VStack {
@@ -79,15 +89,6 @@ struct ContentView: View {
 
     private var filteredNotes: [Note] {
         switch currentFilter {
-        case .all:
-            return notes
-        case .favorite:
-            return notes.filter { $0.isFavourite }
-        }
-    }
-
-    private func filteredNotes(for filter: Filter) -> [Note] {
-        switch filter {
         case .all:
             return notes
         case .favorite:
@@ -128,5 +129,17 @@ struct ContentView: View {
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}
+
+extension [Note] {
+
+    func filteredNotes(for filter: Filter) -> [Note] {
+        switch filter {
+        case .all:
+            return self
+        case .favorite:
+            return self.filter { $0.isFavourite }
+        }
     }
 }

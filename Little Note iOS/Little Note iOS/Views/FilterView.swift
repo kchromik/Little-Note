@@ -5,6 +5,7 @@
 //  Created by Kevin Chromik on 21.08.24.
 //
 
+import LittleBase
 import SwiftUI
 
 enum Filter: String, CaseIterable {
@@ -15,8 +16,7 @@ enum Filter: String, CaseIterable {
 struct FilterView: View {
 
     var filter: Filter
-    @Binding var isActive: Bool
-    @State var numberOfItems: Int
+    var isActive: Bool
 
     var body: some View {
 
@@ -24,16 +24,7 @@ struct FilterView: View {
             Text(filter.rawValue)
                 .padding([.leading, .trailing], 8)
                 .foregroundStyle(.black)
-
-            if isActive {
-                Text("\(numberOfItems)")
-                    .font(.footnote)
-                    .foregroundStyle(.white)
-                    .padding(8)
-                    .background(Color.black.opacity(0.8))
-                    .clipShape(Circle())
-                    .padding(.trailing, 8)
-            }
+                .padding(isActive ? 4 : 0)
         }
         .padding(4)
         .background(
@@ -42,12 +33,19 @@ struct FilterView: View {
         )
         .overlay(
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .stroke(Color.black, lineWidth: 2) // Add stroke here
+                .stroke(Color.black, lineWidth: 2)
         )
-        .opacity(isActive ? 1.0 : 0.7)
     }
 }
 
 #Preview {
-    FilterView(filter: .all, isActive: .constant(true), numberOfItems: 24)
+
+    do {
+        let previewer = try Previewer()
+
+        return FilterView(filter: .all, isActive: true)
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }

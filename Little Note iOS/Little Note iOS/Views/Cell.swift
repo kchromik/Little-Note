@@ -45,7 +45,9 @@ struct Cell: View {
         }
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button {
-                note.isFavourite.toggle()
+                withAnimation {
+                    note.isFavourite.toggle()
+                }
             } label: {
                 Image(systemName: note.isFavourite ? "heart.fill" : "heart")
                     .frame(width: 44, height: 44)
