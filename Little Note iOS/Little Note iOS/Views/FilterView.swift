@@ -23,17 +23,13 @@ struct FilterView: View {
         HStack(spacing: 0) {
             Text(filter.rawValue)
                 .padding([.leading, .trailing], 8)
-                .foregroundStyle(.black)
-                .padding(isActive ? 4 : 0)
+                .foregroundStyle(isActive ? . white : .black)
+                .padding(4)
         }
         .padding(4)
         .background(
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color.white)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .stroke(Color.black, lineWidth: 2)
+                .fill(isActive ? Color.black : Color.gray.opacity(0.3))
         )
     }
 }
@@ -43,7 +39,7 @@ struct FilterView: View {
     do {
         let previewer = try Previewer()
 
-        return FilterView(filter: .all, isActive: true)
+        return FilterView(filter: .all, isActive: false)
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

@@ -25,41 +25,58 @@ struct ContentView: View {
                 EmptyListView()
             } else {
                 VStack {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(Filter.allCases, id: \.self) { filter in
-                                FilterView(
-                                    filter: filter,
-                                    isActive: currentFilter == filter
-                                )
-                                .onTapGesture {
-                                    withAnimation {
-                                        currentFilter = filter
+                    HStack {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(Filter.allCases, id: \.self) { filter in
+                                    FilterView(
+                                        filter: filter,
+                                        isActive: currentFilter == filter
+                                    )
+                                    .onTapGesture {
+                                        withAnimation {
+                                            currentFilter = filter
+                                        }
                                     }
                                 }
                             }
+                            .padding()
                         }
-                        .padding()
+                        Spacer()
+
+                        Button(action: {
+
+
+                        }, label: {
+                            Image(systemName: "gear")
+                                .tint(.black)
+                                .padding(4)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                        .fill(Color.gray.opacity(0.3))
+                                )
+                        })
+                        .padding(.trailing, 20)
                     }
 
-                        List {
-                            ForEach(filteredNotes) { note in
-                                Cell(note: note)
-                                    .listRowSeparator(.hidden)
-                                    .onTapGesture {
-                                        isEditing = true
-                                        currentNote = note
-                                        withAnimation {
-                                            showingDetails.toggle()
-                                        }
+                    List {
+                        ForEach(filteredNotes) { note in
+                            Cell(note: note)
+                                .listRowSeparator(.hidden)
+                                .onTapGesture {
+                                    isEditing = true
+                                    currentNote = note
+                                    withAnimation {
+                                        showingDetails.toggle()
                                     }
-                            }
-                            .onDelete(perform: deleteNote)
-
+                                }
                         }
-                        .listStyle(.plain)
-                        .listRowSpacing(0)
-                        .animation(.default, value: filteredNotes)
+                        .onDelete(perform: deleteNote)
+
+                    }
+                    .listStyle(.plain)
+                    .listRowSpacing(0)
+                    .animation(.default, value: filteredNotes)
 
                 }
             }
