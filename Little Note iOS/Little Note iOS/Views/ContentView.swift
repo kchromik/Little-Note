@@ -15,6 +15,7 @@ struct ContentView: View {
     @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
 
     @State private var showingDetails = false
+    @State private var showingSettings = false
     @State private var currentNote: Note?
     @State private var isEditing = false
     @State private var currentFilter: Filter = .all
@@ -45,15 +46,14 @@ struct ContentView: View {
                         Spacer()
 
                         Button(action: {
-
-
+                            showingSettings.toggle()
                         }, label: {
                             Image(systemName: "gear")
-                                .tint(.black)
-                                .padding(4)
+                                .tint(.white)
+                                .padding(8)
                                 .background(
                                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                        .fill(Color.gray.opacity(0.3))
+                                        .fill(Color.black)
                                 )
                         })
                         .padding(.trailing, 20)
@@ -97,6 +97,9 @@ struct ContentView: View {
                     .presentationDragIndicator(.visible)
             }
         }
+        .sheet(isPresented: $showingSettings, content: {
+            SettingsView()
+        })
         .onChange(of: showingDetails) { oldValue, newValue in
             if newValue && !isEditing {
                 currentNote = Note()

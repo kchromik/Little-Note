@@ -19,18 +19,14 @@ struct FilterView: View {
     var isActive: Bool
 
     var body: some View {
-
-        HStack(spacing: 0) {
-            Text(filter.rawValue)
-                .padding([.leading, .trailing], 8)
-                .foregroundStyle(isActive ? . white : .black)
-                .padding(4)
-        }
-        .padding(4)
-        .background(
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(isActive ? Color.black : Color.gray.opacity(0.3))
-        )
+        Text(filter.rawValue)
+            .padding([.leading, .trailing], 8)
+            .foregroundStyle(isActive ? .yellow : .black)
+            .padding(8)
+            .background(
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(isActive ? Color.black : Color.gray.opacity(0.2))
+            )
     }
 }
 
@@ -39,7 +35,7 @@ struct FilterView: View {
     do {
         let previewer = try Previewer()
 
-        return FilterView(filter: .all, isActive: false)
+        return FilterView(filter: .all, isActive: true)
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
