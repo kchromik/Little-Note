@@ -16,11 +16,12 @@ struct FloatingButtons: View {
                 showingDetails.toggle()
             } label: {
                 Image(systemName: "plus")
-                    .frame(width: 44, height: 44)
+                    .frame(width: 56, height: 56)
                     .background(Color.black)
                     .clipShape(Circle())
                     .foregroundColor(.white)
             }
+            .buttonStyle(ScalableButtonStyle())
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 8)

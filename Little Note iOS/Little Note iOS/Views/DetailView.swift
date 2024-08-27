@@ -5,6 +5,7 @@
 //  Created by Kevin Chromik on 08.08.24.
 //
 
+import HighlightedTextEditor
 import LittleBase
 import SwiftUI
 

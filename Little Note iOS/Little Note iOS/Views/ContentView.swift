@@ -25,7 +25,7 @@ struct ContentView: View {
             if notes.isEmpty {
                 EmptyListView()
             } else {
-                VStack {
+                VStack(spacing: 0) {
                     HStack {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
@@ -45,9 +45,9 @@ struct ContentView: View {
                         }
                         Spacer()
 
-                        Button(action: {
+                        Button {
                             showingSettings.toggle()
-                        }, label: {
+                        } label: {
                             Image(systemName: "gear")
                                 .tint(.white)
                                 .padding(8)
@@ -55,21 +55,26 @@ struct ContentView: View {
                                     RoundedRectangle(cornerRadius: 25, style: .continuous)
                                         .fill(Color.black)
                                 )
-                        })
+                        }
                         .padding(.trailing, 20)
                     }
 
+//                    Color.red
+//                        .frame(height: 20)
+
                     List {
                         ForEach(filteredNotes) { note in
-                            Cell(note: note)
-                                .listRowSeparator(.hidden)
-                                .onTapGesture {
-                                    isEditing = true
-                                    currentNote = note
-                                    withAnimation {
-                                        showingDetails.toggle()
-                                    }
+                            Button {
+                                isEditing = true
+                                currentNote = note
+                                withAnimation {
+                                    showingDetails.toggle()
                                 }
+                            } label: {
+                                Cell(note: note)
+                            }
+                            .buttonStyle(ScalableButtonStyle())
+                            .listRowSeparator(.hidden)
                         }
                         .onDelete(perform: deleteNote)
 
@@ -97,9 +102,9 @@ struct ContentView: View {
                     .presentationDragIndicator(.visible)
             }
         }
-        .sheet(isPresented: $showingSettings, content: {
+        .fullScreenCover(isPresented: $showingSettings) {
             SettingsView()
-        })
+        }
         .onChange(of: showingDetails) { oldValue, newValue in
             if newValue && !isEditing {
                 currentNote = Note()

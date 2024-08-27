@@ -9,27 +9,54 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @StateObject var viewModel = SettingsViewModel()
+    @Environment(\.dismiss) var dismiss
+    @State var viewModel = SettingsViewModel()
+    @State var isShowingAbout: Bool = false
 
     var body: some View {
         NavigationStack {
             VStack {
-
-                List {
-                    SettingsCell(imageName: "envelope", text: "Support")
-                        .listRowSeparator(.hidden)
-                    SettingsCell(imageName: "bubble.left.and.text.bubble.right", text: "Support")
+                HStack {
+                    Text("Settings")
+                        .font(.title)
+                        .bold()
+                    Spacer()
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                            .tint(.black)
+                            .padding(8)
+                    }
+                    .buttonStyle(ScalableButtonStyle())
                 }
-                .listStyle(.insetGrouped)
+                .padding([.vertical, .horizontal], 8)
+                ScrollView {
+                    VStack {
+                        SettingsCell(imageName: "gift", text: "Vote on features") {
+                            viewModel.openMail()
+                        }
+
+                        SettingsCell(imageName: "envelope", text: "Contact Support") {
+                            viewModel.openMail()
+                        }
+
+                        SettingsCell(imageName: "heart.fill", text: "About the app") {
+                            isShowingAbout.toggle()
+                        }
+                    }
+                }
 
                 Spacer()
                 Text("Little Note \(viewModel.versionString)")
-                    .bold()
+                    .font(.caption2)
                     .padding()
-                    .background(.clear)
             }
-            .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $isShowingAbout) {
+                AboutView()
+            }
         }
     }
 }
