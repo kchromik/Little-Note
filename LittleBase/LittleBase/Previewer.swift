@@ -13,6 +13,7 @@ public struct Previewer {
     public let note1: Note
     public let note2: Note
     public let note3: Note
+    public let note4: Note
 
     public init() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
@@ -26,10 +27,14 @@ public struct Previewer {
         note2.customTitle = "bla bla"
         note3 = Note()
         note3.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+        note4 = Note()
+        note4.customTitle = "Test Title"
+        note4.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 
 
         container.mainContext.insert(note2)
-//        container.mainContext.insert(note1)
-//        container.mainContext.insert(note3)
+        container.mainContext.insert(note1)
+        container.mainContext.insert(note3)
+        container.mainContext.insert(note4)
     }
 }

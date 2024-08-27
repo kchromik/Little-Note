@@ -59,9 +59,6 @@ struct ContentView: View {
                         .padding(.trailing, 20)
                     }
 
-//                    Color.red
-//                        .frame(height: 20)
-
                     List {
                         ForEach(filteredNotes) { note in
                             Button {
@@ -75,6 +72,7 @@ struct ContentView: View {
                             }
                             .buttonStyle(ScalableButtonStyle())
                             .listRowSeparator(.hidden)
+                            .listRowInsets(.init(top: 8, leading: 8, bottom: 12, trailing: 8))
                         }
                         .onDelete(perform: deleteNote)
 
@@ -82,11 +80,8 @@ struct ContentView: View {
                     .listStyle(.plain)
                     .listRowSpacing(0)
                     .animation(.default, value: filteredNotes)
-
                 }
             }
-
-
 
             VStack {
                 Spacer()

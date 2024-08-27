@@ -59,6 +59,11 @@ struct Cell: View {
         .background(Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(color: .gray.opacity(0.25), radius: 2,y: 4)
+        .onTapGesture(count: 2) {
+            withAnimation {
+                note.isFavourite.toggle()
+            }
+        }
     }
 }
 

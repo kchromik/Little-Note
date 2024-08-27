@@ -12,10 +12,10 @@
 		74015AFE2C65113C00BBDB21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015AFD2C65113C00BBDB21 /* DetailView.swift */; };
 		74015B042C6514DF00BBDB21 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015B032C6514DF00BBDB21 /* Cell.swift */; };
 		74016C412C7DF42F00E93D2D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C402C7DF42F00E93D2D /* AboutView.swift */; };
+		74016C432C7E1CCC00E93D2D /* SFSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C422C7E1CCC00E93D2D /* SFSafariView.swift */; };
 		744FF55A2C75F1C900A43C32 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF5592C75F1C900A43C32 /* FilterView.swift */; };
 		744FF55C2C7644C900A43C32 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF55B2C7644C900A43C32 /* EmptyListView.swift */; };
 		7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480F69B2C73715000899E30 /* FloatingButtons.swift */; };
-		74C07BF22C7D0927008FF803 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 74C07BF12C7D0927008FF803 /* HighlightedTextEditor */; };
 		74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */; };
 		74D80A452C64FD690011016D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* ContentView.swift */; };
 		74D80A472C64FD6A0011016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A462C64FD6A0011016D /* Assets.xcassets */; };
@@ -44,6 +44,7 @@
 		74015AFD2C65113C00BBDB21 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		74015B032C6514DF00BBDB21 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		74016C402C7DF42F00E93D2D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		74016C422C7E1CCC00E93D2D /* SFSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariView.swift; sourceTree = "<group>"; };
 		744FF5592C75F1C900A43C32 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		744FF55B2C7644C900A43C32 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Note iOS.entitlements"; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74C07BF22C7D0927008FF803 /* HighlightedTextEditor in Frameworks */,
 				74015AF82C650A8200BBDB21 /* LittleBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +84,7 @@
 				74EB7BF12C7C8DFA0023B767 /* SettingsView.swift */,
 				74EB7BF62C7C958E0023B767 /* SettingsCell.swift */,
 				74016C402C7DF42F00E93D2D /* AboutView.swift */,
+				74016C422C7E1CCC00E93D2D /* SFSafariView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +170,6 @@
 			);
 			name = "Little Note iOS";
 			packageProductDependencies = (
-				74C07BF12C7D0927008FF803 /* HighlightedTextEditor */,
 			);
 			productName = "Little Note iOS";
 			productReference = 74D80A3F2C64FD690011016D /* Little Note iOS.app */;
@@ -200,7 +200,6 @@
 			);
 			mainGroup = 74D80A362C64FD690011016D;
 			packageReferences = (
-				74C07BF02C7D0927008FF803 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
 			);
 			productRefGroup = 74D80A402C64FD690011016D /* Products */;
 			projectDirPath = "";
@@ -231,6 +230,7 @@
 				74D80A452C64FD690011016D /* ContentView.swift in Sources */,
 				74EB7BF22C7C8DFA0023B767 /* SettingsView.swift in Sources */,
 				74016C412C7DF42F00E93D2D /* AboutView.swift in Sources */,
+				74016C432C7E1CCC00E93D2D /* SFSafariView.swift in Sources */,
 				7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */,
 				744FF55C2C7644C900A43C32 /* EmptyListView.swift in Sources */,
 				74EB7BF72C7C958E0023B767 /* SettingsCell.swift in Sources */,
@@ -452,25 +452,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		74C07BF02C7D0927008FF803 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:kyle-n/HighlightedTextEditor.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		74C07BF12C7D0927008FF803 /* HighlightedTextEditor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 74C07BF02C7D0927008FF803 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
-			productName = HighlightedTextEditor;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74D80A372C64FD690011016D /* Project object */;
 }

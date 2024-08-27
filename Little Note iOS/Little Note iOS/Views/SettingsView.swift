@@ -12,6 +12,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     @State var viewModel = SettingsViewModel()
     @State var isShowingAbout: Bool = false
+    @State var isShowingFeatureRoadmap: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -35,8 +36,9 @@ struct SettingsView: View {
                 .padding([.vertical, .horizontal], 8)
                 ScrollView {
                     VStack {
+
                         SettingsCell(imageName: "gift", text: "Vote on features") {
-                            viewModel.openMail()
+                            isShowingFeatureRoadmap.toggle()
                         }
 
                         SettingsCell(imageName: "envelope", text: "Contact Support") {
@@ -47,6 +49,7 @@ struct SettingsView: View {
                             isShowingAbout.toggle()
                         }
                     }
+                    .padding(.horizontal, 8)
                 }
 
                 Spacer()
@@ -56,6 +59,10 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $isShowingAbout) {
                 AboutView()
+                    .presentationDetents([.medium, .large])
+            }
+            .sheet(isPresented: $isShowingFeatureRoadmap) {
+                WebView(url: "https://insigh.to/b/little-note")
             }
         }
     }

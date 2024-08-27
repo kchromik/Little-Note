@@ -27,7 +27,6 @@ struct SettingsCell: View {
             .background(RoundedRectangle(cornerRadius: 16).fill(Color.gray.opacity(0.1)))
         }
         .buttonStyle(ScalableButtonStyle())
-        .padding(.horizontal, 12)
     }
 }
 
