@@ -32,7 +32,7 @@ struct Cell: View {
                     .foregroundStyle(.black)
                     .lineLimit(3)
                 HStack {
-                    Text("\(note.numberOfWords) words")
+                    Text(note.formattedNumberOfWords)
                         .font(.footnote)
                         .foregroundStyle(.black)
                         .padding(8)

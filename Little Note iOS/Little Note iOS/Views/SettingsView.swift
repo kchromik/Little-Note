@@ -62,7 +62,8 @@ struct SettingsView: View {
                     .presentationDetents([.medium, .large])
             }
             .sheet(isPresented: $isShowingFeatureRoadmap) {
-                WebView(url: "https://insigh.to/b/little-note")
+                FeaturesList()
+//                WebView(url: "https://insigh.to/b/little-note")
             }
         }
     }

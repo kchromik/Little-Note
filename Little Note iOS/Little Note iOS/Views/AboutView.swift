@@ -46,7 +46,7 @@ struct AboutView: View {
                 }
                 .padding(.top)
 
-                SettingsCell(imageName: "person.crop.square.badge.camera.fill", text: "YouTube (@kevinchromik)") {
+                SettingsCell(imageName: "person.crop.square.badge.camera.fill", text: "Instagram (@kevinchromik)") {
                     guard let url = URL(string: "https://www.instagram.com/kevinchromik") else { return }
                     UIApplication.shared.open(url)
                 }

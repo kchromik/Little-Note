@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 public class Note {
@@ -61,6 +62,13 @@ public class Note {
     public var numberOfWords: Int {
         let components = text.components(separatedBy: .whitespacesAndNewlines)
         return components.filter { !$0.isEmpty }.count
+    }
+
+    public var formattedNumberOfWords: LocalizedStringKey {
+        let components = text.components(separatedBy: .whitespacesAndNewlines)
+        let count = components.filter { !$0.isEmpty }.count
+
+        return "^[\(count) Word](inflect: true)"
     }
 }
 
