@@ -5,7 +5,6 @@
 //  Created by Kevin Chromik on 08.08.24.
 //
 
-import HighlightedTextEditor
 import LittleBase
 import SwiftUI
 
@@ -46,10 +45,6 @@ struct DetailView: View {
         .padding()
         .navigationTitle("Note Detail")
         .background(Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0))
-        .clipShape(RoundedRectangle(cornerRadius: 32))
-        .shadow(color: .gray.opacity(0.4), radius: 4)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .ignoresSafeArea()
     }
 }
 

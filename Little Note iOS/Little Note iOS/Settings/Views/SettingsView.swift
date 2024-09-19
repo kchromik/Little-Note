@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
 
     @Environment(\.dismiss) var dismiss
-    @State var viewModel = SettingsViewModel()
+    @State var viewModel = ViewModel()
     @State var isShowingAbout: Bool = false
     @State var isShowingFeatureRoadmap: Bool = false
 

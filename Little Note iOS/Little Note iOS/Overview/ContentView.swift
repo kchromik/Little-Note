@@ -11,18 +11,16 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
+    @State private var viewModel: ContentViewModel
 
-    @State private var showingDetails = false
-    @State private var showingSettings = false
-    @State private var currentNote: Note?
-    @State private var isEditing = false
-    @State private var currentFilter: Filter = .all
+    init(modelContext: ModelContext) {
+        let viewModel = ContentViewModel(modelContext: modelContext)
+        _viewModel = State(initialValue: viewModel)
+    }
 
     var body: some View {
         ZStack {
-            if notes.isEmpty {
+            if viewModel.notes.isEmpty {
                 EmptyListView()
             } else {
                 VStack(spacing: 0) {
@@ -32,11 +30,11 @@ struct ContentView: View {
                                 ForEach(Filter.allCases, id: \.self) { filter in
                                     FilterView(
                                         filter: filter,
-                                        isActive: currentFilter == filter
+                                        isActive: viewModel.currentFilter == filter
                                     )
                                     .onTapGesture {
                                         withAnimation {
-                                            currentFilter = filter
+                                            viewModel.currentFilter = filter
                                         }
                                     }
                                 }
@@ -46,7 +44,7 @@ struct ContentView: View {
                         Spacer()
 
                         Button {
-                            showingSettings.toggle()
+                            viewModel.showingSettings.toggle()
                         } label: {
                             Image(systemName: "gear")
                                 .tint(.white)
@@ -60,12 +58,12 @@ struct ContentView: View {
                     }
 
                     List {
-                        ForEach(filteredNotes) { note in
+                        ForEach(viewModel.filteredNotes) { note in
                             Button {
-                                isEditing = true
-                                currentNote = note
+                                viewModel.isEditing = true
+                                viewModel.currentNote = note
                                 withAnimation {
-                                    showingDetails.toggle()
+                                    viewModel.showingDetails.toggle()
                                 }
                             } label: {
                                 Cell(note: note)
@@ -74,69 +72,36 @@ struct ContentView: View {
                             .listRowSeparator(.hidden)
                             .listRowInsets(.init(top: 8, leading: 8, bottom: 12, trailing: 8))
                         }
-                        .onDelete(perform: deleteNote)
+                        .onDelete(perform: viewModel.deleteNote)
 
                     }
                     .listStyle(.plain)
                     .listRowSpacing(0)
-                    .animation(.default, value: filteredNotes)
+                    .animation(.default, value: viewModel.filteredNotes)
                 }
             }
 
             VStack {
                 Spacer()
-                FloatingButtons(showingDetails: $showingDetails)
+                FloatingButtons(showingDetails: $viewModel.showingDetails)
             }
             .padding(.bottom, 12)
         }
-        .sheet(isPresented: $showingDetails, onDismiss: saveCurrentNoteIfNotEmpty) {
-            if let note = currentNote {
+        .sheet(isPresented: $viewModel.showingDetails, onDismiss: viewModel.saveCurrentNoteIfNotEmpty) {
+            if let note = viewModel.currentNote {
                 DetailView(note: note)
                     .presentationDetents([.medium, .large])
                     .presentationCornerRadius(32)
                     .presentationDragIndicator(.visible)
             }
         }
-        .fullScreenCover(isPresented: $showingSettings) {
+        .fullScreenCover(isPresented: $viewModel.showingSettings) {
             SettingsView()
         }
-        .onChange(of: showingDetails) { oldValue, newValue in
-            if newValue && !isEditing {
-                currentNote = Note()
+        .onChange(of: viewModel.showingDetails) { oldValue, newValue in
+            if newValue && !viewModel.isEditing {
+                viewModel.currentNote = Note()
             }
-        }
-    }
-
-    private var filteredNotes: [Note] {
-        switch currentFilter {
-        case .all:
-            return notes
-        case .favorite:
-            return notes.filter { $0.isFavourite }
-        }
-    }
-
-    private func saveCurrentNoteIfNotEmpty() {
-        defer {
-            currentNote = nil
-        }
-        guard let currentNote = currentNote, !currentNote.text.isEmpty else {
-            return
-        }
-
-        // If creating a new note, add it to the model context with animation.
-        if !isEditing {
-            modelContext.insert(currentNote)
-        }
-
-        // Reset editing flag after saving
-        isEditing = false
-    }
-
-    private func deleteNote(at offsets: IndexSet) {
-        for index in offsets {
-            let noteToDelete = notes[index]
-            modelContext.delete(noteToDelete)
         }
     }
 }
@@ -145,7 +110,7 @@ struct ContentView: View {
     do {
         let previewer = try Previewer()
 
-        return ContentView()
+        return ContentView(modelContext: previewer.container.mainContext)
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

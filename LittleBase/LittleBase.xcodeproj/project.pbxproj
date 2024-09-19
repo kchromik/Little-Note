@@ -10,6 +10,8 @@
 		74015AFC2C650B6100BBDB21 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015AFB2C650B6100BBDB21 /* Note.swift */; };
 		74015B002C65115B00BBDB21 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015AFF2C65115B00BBDB21 /* Previewer.swift */; };
 		74016C502C7F1D8700E93D2D /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C4F2C7F1D8700E93D2D /* UserDefaults+Extension.swift */; };
+		7468D74E2C9C40C600EB962B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D74D2C9C40C600EB962B /* ContentViewModel.swift */; };
+		7468D7512C9C43E900EB962B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D7502C9C43E900EB962B /* Filter.swift */; };
 		748B9C9D2C6507D1007E8706 /* LittleBase.docc in Sources */ = {isa = PBXBuildFile; fileRef = 748B9C9C2C6507D1007E8706 /* LittleBase.docc */; };
 		748B9C9E2C6507D1007E8706 /* LittleBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 748B9C9B2C6507D1007E8706 /* LittleBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -18,6 +20,8 @@
 		74015AFB2C650B6100BBDB21 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		74015AFF2C65115B00BBDB21 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		74016C4F2C7F1D8700E93D2D /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		7468D74D2C9C40C600EB962B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		7468D7502C9C43E900EB962B /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		748B9C982C6507D1007E8706 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		748B9C9B2C6507D1007E8706 /* LittleBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LittleBase.h; sourceTree = "<group>"; };
 		748B9C9C2C6507D1007E8706 /* LittleBase.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LittleBase.docc; sourceTree = "<group>"; };
@@ -34,6 +38,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7468D74F2C9C40CF00EB962B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74015AFF2C65115B00BBDB21 /* Previewer.swift */,
+				74016C4F2C7F1D8700E93D2D /* UserDefaults+Extension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7468D7522C9C458B00EB962B /* Notes Overview */ = {
+			isa = PBXGroup;
+			children = (
+				74015AFB2C650B6100BBDB21 /* Note.swift */,
+				7468D74D2C9C40C600EB962B /* ContentViewModel.swift */,
+			);
+			path = "Notes Overview";
+			sourceTree = "<group>";
+		};
+		7468D7532C9C459E00EB962B /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				7468D7502C9C43E900EB962B /* Filter.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
 		748B9C8E2C6507D1007E8706 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +83,9 @@
 		748B9C9A2C6507D1007E8706 /* LittleBase */ = {
 			isa = PBXGroup;
 			children = (
-				74015AFB2C650B6100BBDB21 /* Note.swift */,
-				74015AFF2C65115B00BBDB21 /* Previewer.swift */,
-				74016C4F2C7F1D8700E93D2D /* UserDefaults+Extension.swift */,
+				7468D7522C9C458B00EB962B /* Notes Overview */,
+				7468D7532C9C459E00EB962B /* Filters */,
+				7468D74F2C9C40CF00EB962B /* Common */,
 				748B9C9B2C6507D1007E8706 /* LittleBase.h */,
 				748B9C9C2C6507D1007E8706 /* LittleBase.docc */,
 			);
@@ -142,9 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74015B002C65115B00BBDB21 /* Previewer.swift in Sources */,
+				7468D7512C9C43E900EB962B /* Filter.swift in Sources */,
 				748B9C9D2C6507D1007E8706 /* LittleBase.docc in Sources */,
 				74016C502C7F1D8700E93D2D /* UserDefaults+Extension.swift in Sources */,
 				74015AFC2C650B6100BBDB21 /* Note.swift in Sources */,
+				7468D74E2C9C40C600EB962B /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

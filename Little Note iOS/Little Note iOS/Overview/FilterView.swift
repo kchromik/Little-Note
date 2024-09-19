@@ -8,11 +8,6 @@
 import LittleBase
 import SwiftUI
 
-enum Filter: String, CaseIterable {
-    case all = "All"
-    case favorite = "Favorites"
-}
-
 struct FilterView: View {
 
     @Environment(\.colorScheme) var colorScheme

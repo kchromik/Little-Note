@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeaturesList: View {
 
-    @StateObject var viewModel = FeatureViewModel()
+    @StateObject var viewModel = ViewModel()
     @State var isShowingFeatureDetails: Bool = false
 
     var body: some View {

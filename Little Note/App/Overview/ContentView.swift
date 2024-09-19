@@ -75,6 +75,7 @@ struct ContentView: View {
                     }
                     .padding([.leading, .trailing])
                 }
+                .scrollIndicators(.hidden)
                 .padding([.top])
                 TextPad(note: currentNote)
                     .padding()
