@@ -16,7 +16,7 @@
 		74BF6B302B7FC28C00DD8E9E /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */; };
 		74BF6B322B7FC89800DD8E9E /* HotKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */; };
 		74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */; };
-		74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* ContentView.swift */; };
+		74D4AA282A793EC400FE6D43 /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* NotesScreen.swift */; };
 		74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA292A793EC500FE6D43 /* Assets.xcassets */; };
 		74D4AA2D2A793EC500FE6D43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA2C2A793EC500FE6D43 /* Preview Assets.xcassets */; };
 		74F8C8A62C00B112000FF75C /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8C8A52C00B112000FF75C /* HoverButton.swift */; };
@@ -46,7 +46,7 @@
 		74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little-Note-Info.plist"; sourceTree = SOURCE_ROOT; };
 		74D4AA222A793EC400FE6D43 /* Little Note macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
-		74D4AA272A793EC400FE6D43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		74D4AA272A793EC400FE6D43 /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
 		74D4AA292A793EC500FE6D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		74D4AA2C2A793EC500FE6D43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74D4AA2E2A793EC500FE6D43 /* Little_Note.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Little_Note.entitlements; path = ../Little_Note.entitlements; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		7468D7552C9C4B0A00EB962B /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				74D4AA272A793EC400FE6D43 /* ContentView.swift */,
+				74D4AA272A793EC400FE6D43 /* NotesScreen.swift */,
 				7443C7B32B76BE3500E06277 /* TextPad.swift */,
 			);
 			path = Overview;
@@ -97,9 +97,7 @@
 		7468D7562C9C4B3000EB962B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				74BF6B222B7FA72600DD8E9E /* SettingsView.swift */,
-				74F8C8A52C00B112000FF75C /* HoverButton.swift */,
-				74F8C8A72C00B4F4000FF75C /* AnalyticsView.swift */,
+				7468D75F2C9C52FC00EB962B /* Views */,
 				74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */,
 			);
 			path = Settings;
@@ -114,6 +112,16 @@
 				74D4AA2B2A793EC500FE6D43 /* Preview Content */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7468D75F2C9C52FC00EB962B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74BF6B222B7FA72600DD8E9E /* SettingsView.swift */,
+				74F8C8A52C00B112000FF75C /* HoverButton.swift */,
+				74F8C8A72C00B4F4000FF75C /* AnalyticsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		74BF6B332B7FC8BF00DD8E9E /* App */ = {
@@ -241,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74BF6B322B7FC89800DD8E9E /* HotKeyViewModel.swift in Sources */,
-				74D4AA282A793EC400FE6D43 /* ContentView.swift in Sources */,
+				74D4AA282A793EC400FE6D43 /* NotesScreen.swift in Sources */,
 				74F8C8A82C00B4F4000FF75C /* AnalyticsView.swift in Sources */,
 				74F8C8A62C00B112000FF75C /* HoverButton.swift in Sources */,
 				74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */,

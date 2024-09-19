@@ -23,7 +23,7 @@
 		744FF55C2C7644C900A43C32 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF55B2C7644C900A43C32 /* EmptyListView.swift */; };
 		7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480F69B2C73715000899E30 /* FloatingButtons.swift */; };
 		74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */; };
-		74D80A452C64FD690011016D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* ContentView.swift */; };
+		74D80A452C64FD690011016D /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* NotesScreen.swift */; };
 		74D80A472C64FD6A0011016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A462C64FD6A0011016D /* Assets.xcassets */; };
 		74D80A4A2C64FD6A0011016D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A492C64FD6A0011016D /* Preview Assets.xcassets */; };
 		74EB7BF22C7C8DFA0023B767 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB7BF12C7C8DFA0023B767 /* SettingsView.swift */; };
@@ -63,7 +63,7 @@
 		7480F69B2C73715000899E30 /* FloatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtons.swift; sourceTree = "<group>"; };
 		74D80A3F2C64FD690011016D /* Little Note iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_Note_iOSApp.swift; sourceTree = "<group>"; };
-		74D80A442C64FD690011016D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		74D80A442C64FD690011016D /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
 		74D80A462C64FD6A0011016D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		74D80A492C64FD6A0011016D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74EB7BF12C7C8DFA0023B767 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		7468D7582C9C4BA800EB962B /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				74D80A442C64FD690011016D /* ContentView.swift */,
+				74D80A442C64FD690011016D /* NotesScreen.swift */,
 				74015B032C6514DF00BBDB21 /* Cell.swift */,
 				744FF55B2C7644C900A43C32 /* EmptyListView.swift */,
 				744FF5592C75F1C900A43C32 /* FilterView.swift */,
@@ -289,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74016C4A2C7F036600E93D2D /* FeatureViewModel.swift in Sources */,
-				74D80A452C64FD690011016D /* ContentView.swift in Sources */,
+				74D80A452C64FD690011016D /* NotesScreen.swift in Sources */,
 				74EB7BF22C7C8DFA0023B767 /* SettingsView.swift in Sources */,
 				74016C412C7DF42F00E93D2D /* AboutView.swift in Sources */,
 				74016C432C7E1CCC00E93D2D /* SFSafariView.swift in Sources */,

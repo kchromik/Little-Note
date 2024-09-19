@@ -9,7 +9,7 @@ import LittleBase
 import SwiftData
 import SwiftUI
 
-struct ContentView: View {
+struct NotesScreen: View {
 
     @State private var viewModel: ContentViewModel
 
@@ -110,7 +110,7 @@ struct ContentView: View {
     do {
         let previewer = try Previewer()
 
-        return ContentView(modelContext: previewer.container.mainContext)
+        return NotesScreen(modelContext: previewer.container.mainContext)
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

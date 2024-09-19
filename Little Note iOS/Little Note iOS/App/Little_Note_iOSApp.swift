@@ -35,7 +35,7 @@ struct Little_Note_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(modelContext: container.mainContext)
+            NotesScreen(modelContext: container.mainContext)
                 .modelContainer(container)
         }
     }

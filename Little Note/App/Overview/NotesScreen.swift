@@ -11,7 +11,7 @@ import AppKit
 import HotKey
 import LittleBase
 
-struct ContentView: View {
+struct NotesScreen: View {
 
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
@@ -190,7 +190,7 @@ struct ContentView: View {
     do {
         let previewer = try Previewer()
 
-        return ContentView()
+        return NotesScreen()
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

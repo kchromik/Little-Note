@@ -47,13 +47,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		7468D7522C9C458B00EB962B /* Notes Overview */ = {
+		7468D7522C9C458B00EB962B /* Overview */ = {
 			isa = PBXGroup;
 			children = (
 				74015AFB2C650B6100BBDB21 /* Note.swift */,
 				7468D74D2C9C40C600EB962B /* ContentViewModel.swift */,
 			);
-			path = "Notes Overview";
+			path = Overview;
 			sourceTree = "<group>";
 		};
 		7468D7532C9C459E00EB962B /* Filters */ = {
@@ -83,7 +83,7 @@
 		748B9C9A2C6507D1007E8706 /* LittleBase */ = {
 			isa = PBXGroup;
 			children = (
-				7468D7522C9C458B00EB962B /* Notes Overview */,
+				7468D7522C9C458B00EB962B /* Overview */,
 				7468D7532C9C459E00EB962B /* Filters */,
 				7468D74F2C9C40CF00EB962B /* Common */,
 				748B9C9B2C6507D1007E8706 /* LittleBase.h */,
