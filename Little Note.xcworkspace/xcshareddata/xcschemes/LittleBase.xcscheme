@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "74D80A3E2C64FD690011016D"
-               BuildableName = "Little Note iOS.app"
-               BlueprintName = "Little Note iOS"
-               ReferencedContainer = "container:Little Note iOS.xcodeproj">
+               BlueprintIdentifier = "748B9C972C6507D1007E8706"
+               BuildableName = "LittleBase.framework"
+               BlueprintName = "LittleBase"
+               ReferencedContainer = "container:LittleBase/LittleBase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "74D80A3E2C64FD690011016D"
-            BuildableName = "Little Note iOS.app"
-            BlueprintName = "Little Note iOS"
-            ReferencedContainer = "container:Little Note iOS.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "74D80A3E2C64FD690011016D"
-            BuildableName = "Little Note iOS.app"
-            BlueprintName = "Little Note iOS"
-            ReferencedContainer = "container:Little Note iOS.xcodeproj">
+            BlueprintIdentifier = "748B9C972C6507D1007E8706"
+            BuildableName = "LittleBase.framework"
+            BlueprintName = "LittleBase"
+            ReferencedContainer = "container:LittleBase/LittleBase.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
