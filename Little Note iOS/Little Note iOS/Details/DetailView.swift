@@ -20,14 +20,34 @@ struct DetailView: View {
                 .foregroundStyle(Color(red: 172.0/255.0, green: 142.0/255.0, blue: 34.0/255.0))
                 .font(.headline)
 
-            TextField("Enter title", text: $note.customTitle)
-                .font(.title)
-                .foregroundStyle(.black)
+            TextField("",
+                      text: $note.customTitle,
+                      prompt: Text("Enter title")
+                .foregroundColor(Color.gray)
+            )
+            .font(.title)
+            .foregroundStyle(.black)
 
-            TextEditor(text: $note.text)
-                .font(.body)
-                .foregroundStyle(.black)
-                .scrollContentBackground(.hidden)
+            ZStack {
+                TextEditor(text: $note.text)
+                    .font(.body)
+                    .foregroundStyle(.black)
+                    .scrollContentBackground(.hidden)
+
+                if note.text.isEmpty {
+                    VStack {
+                        HStack {
+                            Text("your note comes here...")
+                                .foregroundColor(Color.gray)
+                                .padding(.top, 8)
+
+                            Spacer()
+                        }
+
+                        Spacer()
+                    }
+                }
+            }
 
             HStack {
                 Text("\(note.numberOfWords) words")

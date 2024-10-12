@@ -14,7 +14,9 @@ extension SettingsView {
     class ViewModel {
 
         var versionString: String {
-            Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? ""
+            let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+            return "\(version) (\(build))"
         }
 
         func openMail() {

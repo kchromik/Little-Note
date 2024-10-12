@@ -18,11 +18,11 @@ struct FilterView: View {
     var body: some View {
         Text(filter.rawValue)
             .padding([.leading, .trailing], 8)
-            .foregroundStyle(isActive ? (colorScheme == .dark ? .black : .yellow) : (colorScheme == .dark ? .white : .black))
+            .foregroundStyle(isActive ? (colorScheme == .dark ? .black : Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0)) : (colorScheme == .dark ? .white : .black))
             .padding(8)
             .background(
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    .fill(isActive ? (colorScheme == .dark ? .yellow : Color.black) : (colorScheme == .dark ? Color.white.opacity(0.3) : Color.gray.opacity(0.2)) )
+                    .fill(isActive ? (colorScheme == .dark ? Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0) : Color.black) : (colorScheme == .dark ? Color.white.opacity(0.3) : Color.gray.opacity(0.2)) )
             )
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import Combine
 
 @Observable
 public class ContentViewModel {
@@ -18,6 +19,8 @@ public class ContentViewModel {
     public var showingDetails = false
     public var showingSettings = false
     public var isEditing = false
+
+    private var cancellables = Set<AnyCancellable>()
 
     public var filteredNotes: [Note] {
         switch currentFilter {
@@ -31,6 +34,16 @@ public class ContentViewModel {
     public init(modelContext: ModelContext) {
         self.modelContext = modelContext
 
+        fetchData()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(remoteStoreDidChange),
+                                               name: .NSPersistentStoreRemoteChange,
+                                               object: nil)
+    }
+
+    @objc private func remoteStoreDidChange(_ notification: Notification) {
+        // Fetch the data again when changes are detected
         fetchData()
     }
 
@@ -55,6 +68,7 @@ public class ContentViewModel {
             let noteToDelete = notes[index]
             modelContext.delete(noteToDelete)
         }
+        fetchData()
     }
 
     private func fetchData() {
