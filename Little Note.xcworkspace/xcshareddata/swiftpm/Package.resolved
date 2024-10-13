@@ -1,5 +1,5 @@
 {
-  "originHash" : "1546d4ef15d0b436c620883b310574bd6e60bbaafa0e2b7bfec055d7a4580c60",
+  "originHash" : "23372bbaa53f8544449a0efc07b72ad9615fa21a5712a638e82b1edcc84d3923",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -105,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:orchetect/MenuBarExtraAccess.git",
       "state" : {
-        "revision" : "f5896b47e15e114975897354c7e1082c51a2bffd",
-        "version" : "1.0.5"
+        "revision" : "7d2d07ac3e0e30f73eca1f320be34c214be55542",
+        "version" : "1.1.2"
       }
     },
     {

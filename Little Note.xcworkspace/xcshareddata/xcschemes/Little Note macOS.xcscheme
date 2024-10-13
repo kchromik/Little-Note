@@ -18,7 +18,7 @@
                BlueprintIdentifier = "74D4AA212A793EC400FE6D43"
                BuildableName = "Little Note macOS.app"
                BlueprintName = "Little Note macOS"
-               ReferencedContainer = "container:Little Note macOS.xcodeproj">
+               ReferencedContainer = "container:Little Note macOS/Little Note macOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "74D4AA212A793EC400FE6D43"
             BuildableName = "Little Note macOS.app"
             BlueprintName = "Little Note macOS"
-            ReferencedContainer = "container:Little Note macOS.xcodeproj">
+            ReferencedContainer = "container:Little Note macOS/Little Note macOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "74D4AA212A793EC400FE6D43"
             BuildableName = "Little Note macOS.app"
             BlueprintName = "Little Note macOS"
-            ReferencedContainer = "container:Little Note macOS.xcodeproj">
+            ReferencedContainer = "container:Little Note macOS/Little Note macOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443C7B32B76BE3500E06277 /* TextPad.swift */; };
 		748B9CA52C6507FD007E8706 /* LittleBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; };
 		748B9CA62C6507FD007E8706 /* LittleBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		74BF6B232B7FA72600DD8E9E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B222B7FA72600DD8E9E /* SettingsView.swift */; };
-		74BF6B252B7FA76600DD8E9E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */; };
+		74ACEB472CBBBC2600AE95FB /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB382CBBBC2600AE95FB /* NotesScreen.swift */; };
+		74ACEB482CBBBC2600AE95FB /* TextPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB392CBBBC2600AE95FB /* TextPad.swift */; };
+		74ACEB492CBBBC2600AE95FB /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB3B2CBBBC2600AE95FB /* AnalyticsView.swift */; };
+		74ACEB4A2CBBBC2600AE95FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB3D2CBBBC2600AE95FB /* SettingsView.swift */; };
+		74ACEB4B2CBBBC2600AE95FB /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB362CBBBC2600AE95FB /* Little_NoteApp.swift */; };
+		74ACEB4C2CBBBC2600AE95FB /* HotKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB352CBBBC2600AE95FB /* HotKeyViewModel.swift */; };
+		74ACEB4D2CBBBC2600AE95FB /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB3C2CBBBC2600AE95FB /* HoverButton.swift */; };
+		74ACEB4E2CBBBC2600AE95FB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB3F2CBBBC2600AE95FB /* SettingsViewModel.swift */; };
+		74ACEB4F2CBBBC2600AE95FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ACEB422CBBBC2600AE95FB /* Preview Assets.xcassets */; };
+		74ACEB502CBBBC2600AE95FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ACEB442CBBBC2600AE95FB /* Assets.xcassets */; };
+		74ACEB522CBBBC5300AE95FB /* Little-Note-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74ACEB512CBBBC5300AE95FB /* Little-Note-Info.plist */; };
 		74BF6B282B7FA80600DD8E9E /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 74BF6B272B7FA80600DD8E9E /* HotKey */; };
 		74BF6B302B7FC28C00DD8E9E /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 74BF6B2F2B7FC28C00DD8E9E /* MenuBarExtraAccess */; };
-		74BF6B322B7FC89800DD8E9E /* HotKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */; };
-		74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */; };
-		74D4AA282A793EC400FE6D43 /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4AA272A793EC400FE6D43 /* NotesScreen.swift */; };
-		74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA292A793EC500FE6D43 /* Assets.xcassets */; };
-		74D4AA2D2A793EC500FE6D43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4AA2C2A793EC500FE6D43 /* Preview Assets.xcassets */; };
-		74F8C8A62C00B112000FF75C /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8C8A52C00B112000FF75C /* HoverButton.swift */; };
-		74F8C8A82C00B4F4000FF75C /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8C8A72C00B4F4000FF75C /* AnalyticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,20 +39,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7443C7B32B76BE3500E06277 /* TextPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPad.swift; sourceTree = "<group>"; };
 		748B9CA42C6507FD007E8706 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74BF6B222B7FA72600DD8E9E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
-		74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little-Note-Info.plist"; sourceTree = SOURCE_ROOT; };
+		74ACEB352CBBBC2600AE95FB /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
+		74ACEB362CBBBC2600AE95FB /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
+		74ACEB382CBBBC2600AE95FB /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
+		74ACEB392CBBBC2600AE95FB /* TextPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPad.swift; sourceTree = "<group>"; };
+		74ACEB3B2CBBBC2600AE95FB /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		74ACEB3C2CBBBC2600AE95FB /* HoverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
+		74ACEB3D2CBBBC2600AE95FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		74ACEB3F2CBBBC2600AE95FB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		74ACEB422CBBBC2600AE95FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74ACEB442CBBBC2600AE95FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74ACEB452CBBBC2600AE95FB /* Little_Note.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Little_Note.entitlements; sourceTree = "<group>"; };
+		74ACEB512CBBBC5300AE95FB /* Little-Note-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little-Note-Info.plist"; sourceTree = "<group>"; };
 		74D4AA222A793EC400FE6D43 /* Little Note macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
-		74D4AA272A793EC400FE6D43 /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
-		74D4AA292A793EC500FE6D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		74D4AA2C2A793EC500FE6D43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		74D4AA2E2A793EC500FE6D43 /* Little_Note.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Little_Note.entitlements; path = ../Little_Note.entitlements; sourceTree = "<group>"; };
-		74F8C8A52C00B112000FF75C /* HoverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
-		74F8C8A72C00B4F4000FF75C /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,68 +77,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7468D7542C9C4AFA00EB962B /* Main */ = {
+		74ACEB372CBBBC2600AE95FB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				74D4AA252A793EC400FE6D43 /* Little_NoteApp.swift */,
-				74BF6B312B7FC89800DD8E9E /* HotKeyViewModel.swift */,
+				74ACEB352CBBBC2600AE95FB /* HotKeyViewModel.swift */,
+				74ACEB362CBBBC2600AE95FB /* Little_NoteApp.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		7468D7552C9C4B0A00EB962B /* Overview */ = {
+		74ACEB3A2CBBBC2600AE95FB /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				74D4AA272A793EC400FE6D43 /* NotesScreen.swift */,
-				7443C7B32B76BE3500E06277 /* TextPad.swift */,
+				74ACEB382CBBBC2600AE95FB /* NotesScreen.swift */,
+				74ACEB392CBBBC2600AE95FB /* TextPad.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
 		};
-		7468D7562C9C4B3000EB962B /* Settings */ = {
+		74ACEB3E2CBBBC2600AE95FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7468D75F2C9C52FC00EB962B /* Views */,
-				74BF6B242B7FA76600DD8E9E /* SettingsViewModel.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		7468D7572C9C4B6200EB962B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				74D4AA292A793EC500FE6D43 /* Assets.xcassets */,
-				74D4AA2E2A793EC500FE6D43 /* Little_Note.entitlements */,
-				74BF6BAC2B8375BF00DD8E9E /* Little-Note-Info.plist */,
-				74D4AA2B2A793EC500FE6D43 /* Preview Content */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		7468D75F2C9C52FC00EB962B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				74BF6B222B7FA72600DD8E9E /* SettingsView.swift */,
-				74F8C8A52C00B112000FF75C /* HoverButton.swift */,
-				74F8C8A72C00B4F4000FF75C /* AnalyticsView.swift */,
+				74ACEB3B2CBBBC2600AE95FB /* AnalyticsView.swift */,
+				74ACEB3C2CBBBC2600AE95FB /* HoverButton.swift */,
+				74ACEB3D2CBBBC2600AE95FB /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		74BF6B332B7FC8BF00DD8E9E /* App */ = {
+		74ACEB402CBBBC2600AE95FB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				7468D7542C9C4AFA00EB962B /* Main */,
-				7468D7552C9C4B0A00EB962B /* Overview */,
-				7468D7562C9C4B3000EB962B /* Settings */,
+				74ACEB3E2CBBBC2600AE95FB /* Views */,
+				74ACEB3F2CBBBC2600AE95FB /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		74ACEB412CBBBC2600AE95FB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				74ACEB372CBBBC2600AE95FB /* Main */,
+				74ACEB3A2CBBBC2600AE95FB /* Overview */,
+				74ACEB402CBBBC2600AE95FB /* Settings */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		74ACEB432CBBBC2600AE95FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				74ACEB422CBBBC2600AE95FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		74ACEB462CBBBC2600AE95FB /* Little Note macOS */ = {
+			isa = PBXGroup;
+			children = (
+				74ACEB412CBBBC2600AE95FB /* App */,
+				74ACEB432CBBBC2600AE95FB /* Preview Content */,
+				74ACEB442CBBBC2600AE95FB /* Assets.xcassets */,
+				74ACEB452CBBBC2600AE95FB /* Little_Note.entitlements */,
+				74ACEB512CBBBC5300AE95FB /* Little-Note-Info.plist */,
+			);
+			path = "Little Note macOS";
 			sourceTree = "<group>";
 		};
 		74D4AA192A793EC400FE6D43 = {
 			isa = PBXGroup;
 			children = (
-				74D4AA242A793EC400FE6D43 /* Little Note */,
+				74ACEB462CBBBC2600AE95FB /* Little Note macOS */,
 				74D4AA232A793EC400FE6D43 /* Products */,
 				745F36702C64FFAE00F6D0CF /* Frameworks */,
 			);
@@ -149,24 +159,6 @@
 				74D4AA222A793EC400FE6D43 /* Little Note macOS.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		74D4AA242A793EC400FE6D43 /* Little Note */ = {
-			isa = PBXGroup;
-			children = (
-				74BF6B332B7FC8BF00DD8E9E /* App */,
-				7468D7572C9C4B6200EB962B /* Resources */,
-			);
-			path = "Little Note";
-			sourceTree = "<group>";
-		};
-		74D4AA2B2A793EC500FE6D43 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				74D4AA2C2A793EC500FE6D43 /* Preview Assets.xcassets */,
-			);
-			name = "Preview Content";
-			path = "../Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +228,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D4AA2D2A793EC500FE6D43 /* Preview Assets.xcassets in Resources */,
-				74D4AA2A2A793EC500FE6D43 /* Assets.xcassets in Resources */,
+				74ACEB4F2CBBBC2600AE95FB /* Preview Assets.xcassets in Resources */,
+				74ACEB502CBBBC2600AE95FB /* Assets.xcassets in Resources */,
+				74ACEB522CBBBC5300AE95FB /* Little-Note-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74BF6B322B7FC89800DD8E9E /* HotKeyViewModel.swift in Sources */,
-				74D4AA282A793EC400FE6D43 /* NotesScreen.swift in Sources */,
-				74F8C8A82C00B4F4000FF75C /* AnalyticsView.swift in Sources */,
-				74F8C8A62C00B112000FF75C /* HoverButton.swift in Sources */,
-				74D4AA262A793EC400FE6D43 /* Little_NoteApp.swift in Sources */,
-				74BF6B232B7FA72600DD8E9E /* SettingsView.swift in Sources */,
-				7443C7B42B76BE3500E06277 /* TextPad.swift in Sources */,
-				74BF6B252B7FA76600DD8E9E /* SettingsViewModel.swift in Sources */,
+				74ACEB472CBBBC2600AE95FB /* NotesScreen.swift in Sources */,
+				74ACEB482CBBBC2600AE95FB /* TextPad.swift in Sources */,
+				74ACEB492CBBBC2600AE95FB /* AnalyticsView.swift in Sources */,
+				74ACEB4A2CBBBC2600AE95FB /* SettingsView.swift in Sources */,
+				74ACEB4B2CBBBC2600AE95FB /* Little_NoteApp.swift in Sources */,
+				74ACEB4C2CBBBC2600AE95FB /* HotKeyViewModel.swift in Sources */,
+				74ACEB4D2CBBBC2600AE95FB /* HoverButton.swift in Sources */,
+				74ACEB4E2CBBBC2600AE95FB /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +379,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Little Note/Little_Note.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Little Note macOS/Little_Note.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Little Note/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Little Note macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 7HFRDKKUCK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -418,12 +411,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Little Note/Little_Note.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Little Note macOS/Little_Note.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Little Note/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Little Note macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 7HFRDKKUCK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
