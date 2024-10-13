@@ -14,7 +14,11 @@ struct AboutView: View {
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            detailView()
+            if showsEaterEggs {
+                EasterEggView()
+            } else {
+                detailView()
+            }
         }
         .padding()
     }
