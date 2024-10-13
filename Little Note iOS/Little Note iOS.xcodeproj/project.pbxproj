@@ -13,20 +13,20 @@
 		74015B042C6514DF00BBDB21 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74015B032C6514DF00BBDB21 /* Cell.swift */; };
 		74016C412C7DF42F00E93D2D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C402C7DF42F00E93D2D /* AboutView.swift */; };
 		74016C432C7E1CCC00E93D2D /* SFSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C422C7E1CCC00E93D2D /* SFSafariView.swift */; };
-		74016C452C7EFF4500E93D2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74016C442C7EFF4500E93D2D /* GoogleService-Info.plist */; };
 		74016C482C7F002400E93D2D /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 74016C472C7F002400E93D2D /* FirebaseFirestoreCombine-Community */; };
 		74016C4A2C7F036600E93D2D /* FeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C492C7F036600E93D2D /* FeatureViewModel.swift */; };
 		74016C4C2C7F038300E93D2D /* FeaturesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C4B2C7F038300E93D2D /* FeaturesList.swift */; };
 		74016C4E2C7F195300E93D2D /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C4D2C7F195300E93D2D /* FeatureView.swift */; };
 		74016C522C7F258300E93D2D /* FeatureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74016C512C7F258300E93D2D /* FeatureDetailView.swift */; };
+		742DDB3A2CBBEC8600B3943A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 742DDB382CBBEC8600B3943A /* GoogleService-Info.plist */; };
+		742DDB422CBBECC300B3943A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742DDB402CBBECC300B3943A /* Preview Assets.xcassets */; };
+		742DDB462CBBED3900B3943A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742DDB452CBBED3900B3943A /* Assets.xcassets */; };
 		744FF55A2C75F1C900A43C32 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF5592C75F1C900A43C32 /* FilterView.swift */; };
 		744FF55C2C7644C900A43C32 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FF55B2C7644C900A43C32 /* EmptyListView.swift */; };
 		7480F69C2C73715000899E30 /* FloatingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480F69B2C73715000899E30 /* FloatingButtons.swift */; };
 		74B6657B2CBA62A500ED5441 /* EasterEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6657A2CBA62A500ED5441 /* EasterEggView.swift */; };
 		74D80A432C64FD690011016D /* Little_Note_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */; };
 		74D80A452C64FD690011016D /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D80A442C64FD690011016D /* NotesScreen.swift */; };
-		74D80A472C64FD6A0011016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A462C64FD6A0011016D /* Assets.xcassets */; };
-		74D80A4A2C64FD6A0011016D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D80A492C64FD6A0011016D /* Preview Assets.xcassets */; };
 		74EB7BF22C7C8DFA0023B767 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB7BF12C7C8DFA0023B767 /* SettingsView.swift */; };
 		74EB7BF42C7C8EEE0023B767 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB7BF32C7C8EEE0023B767 /* SettingsViewModel.swift */; };
 		74EB7BF72C7C958E0023B767 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB7BF62C7C958E0023B767 /* SettingsCell.swift */; };
@@ -52,22 +52,22 @@
 		74015B032C6514DF00BBDB21 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		74016C402C7DF42F00E93D2D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		74016C422C7E1CCC00E93D2D /* SFSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariView.swift; sourceTree = "<group>"; };
-		74016C442C7EFF4500E93D2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74016C492C7F036600E93D2D /* FeatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureViewModel.swift; sourceTree = "<group>"; };
 		74016C4B2C7F038300E93D2D /* FeaturesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesList.swift; sourceTree = "<group>"; };
 		74016C4D2C7F195300E93D2D /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		74016C512C7F258300E93D2D /* FeatureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureDetailView.swift; sourceTree = "<group>"; };
+		742DDB382CBBEC8600B3943A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		742DDB392CBBEC8600B3943A /* Little Note iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Little Note iOS.entitlements"; sourceTree = "<group>"; };
+		742DDB402CBBECC300B3943A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		742DDB452CBBED3900B3943A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744FF5592C75F1C900A43C32 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		744FF55B2C7644C900A43C32 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
-		7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Little Note iOS.entitlements"; path = "../Little Note iOS.entitlements"; sourceTree = "<group>"; };
 		7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little-Note-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7480F69B2C73715000899E30 /* FloatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtons.swift; sourceTree = "<group>"; };
 		74B6657A2CBA62A500ED5441 /* EasterEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEggView.swift; sourceTree = "<group>"; };
 		74D80A3F2C64FD690011016D /* Little Note iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_Note_iOSApp.swift; sourceTree = "<group>"; };
 		74D80A442C64FD690011016D /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
-		74D80A462C64FD6A0011016D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		74D80A492C64FD6A0011016D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74EB7BF12C7C8DFA0023B767 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		74EB7BF32C7C8EEE0023B767 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		74EB7BF62C7C958E0023B767 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -92,6 +92,26 @@
 				74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		742DDB322CBBEC3800B3943A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */,
+				742DDB382CBBEC8600B3943A /* GoogleService-Info.plist */,
+				742DDB452CBBED3900B3943A /* Assets.xcassets */,
+				742DDB392CBBEC8600B3943A /* Little Note iOS.entitlements */,
+				742DDB412CBBECC300B3943A /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		742DDB412CBBECC300B3943A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				742DDB402CBBECC300B3943A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		745F36752C64FFBF00F6D0CF /* Frameworks */ = {
@@ -154,18 +174,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		7468D75D2C9C4C7500EB962B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				74D80A462C64FD6A0011016D /* Assets.xcassets */,
-				7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */,
-				7451C32C2C64FDA200E63572 /* Little Note iOS.entitlements */,
-				74016C442C7EFF4500E93D2D /* GoogleService-Info.plist */,
-				74D80A482C64FD6A0011016D /* Preview Content */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		7468D75E2C9C4CFB00EB962B /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,18 +207,9 @@
 				7468D75E2C9C4CFB00EB962B /* Details */,
 				7468D7592C9C4C3D00EB962B /* Settings */,
 				7468D75B2C9C4C5C00EB962B /* Features */,
-				7468D75D2C9C4C7500EB962B /* Resources */,
+				742DDB322CBBEC3800B3943A /* Resources */,
 			);
 			path = "Little Note iOS";
-			sourceTree = "<group>";
-		};
-		74D80A482C64FD6A0011016D /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				74D80A492C64FD6A0011016D /* Preview Assets.xcassets */,
-			);
-			name = "Preview Content";
-			path = "../Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +277,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D80A4A2C64FD6A0011016D /* Preview Assets.xcassets in Resources */,
-				74D80A472C64FD6A0011016D /* Assets.xcassets in Resources */,
-				74016C452C7EFF4500E93D2D /* GoogleService-Info.plist in Resources */,
+				742DDB3A2CBBEC8600B3943A /* GoogleService-Info.plist in Resources */,
+				742DDB462CBBED3900B3943A /* Assets.xcassets in Resources */,
+				742DDB422CBBECC300B3943A /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
