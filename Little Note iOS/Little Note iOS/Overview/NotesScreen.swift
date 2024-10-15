@@ -20,43 +20,45 @@ struct NotesScreen: View {
 
     var body: some View {
         ZStack {
-            if viewModel.notes.isEmpty {
-                EmptyListView()
-            } else {
-                VStack(spacing: 0) {
-                    HStack {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 10) {
-                                ForEach(Filter.allCases, id: \.self) { filter in
-                                    FilterView(
-                                        filter: filter,
-                                        isActive: viewModel.currentFilter == filter
-                                    )
-                                    .onTapGesture {
-                                        withAnimation {
-                                            viewModel.currentFilter = filter
-                                        }
+            VStack(spacing: 0) {
+                HStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(Filter.allCases, id: \.self) { filter in
+                                FilterView(
+                                    filter: filter,
+                                    isActive: viewModel.currentFilter == filter
+                                )
+                                .onTapGesture {
+                                    withAnimation {
+                                        viewModel.currentFilter = filter
                                     }
                                 }
                             }
-                            .padding()
                         }
-                        Spacer()
-
-                        Button {
-                            viewModel.showingSettings.toggle()
-                        } label: {
-                            Image(systemName: "gear")
-                                .tint(.white)
-                                .padding(8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                        .fill(Color.black)
-                                )
-                        }
-                        .padding(.trailing, 20)
+                        .padding()
                     }
+                    Spacer()
 
+                    Button {
+                        viewModel.showingSettings.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                            .tint(.white)
+                            .padding(8)
+                            .background(
+                                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                    .fill(Color.black)
+                            )
+                    }
+                    .padding(.trailing, 20)
+                }
+
+                Spacer()
+
+                if viewModel.filteredNotes.isEmpty {
+                    EmptyListView(activeFilter: viewModel.currentFilter)
+                } else {
                     List {
                         ForEach(viewModel.filteredNotes) { note in
                             Button {
@@ -125,6 +127,8 @@ extension [Note] {
             return self
         case .favorite:
             return self.filter { $0.isFavourite }
+        @unknown default:
+            fatalError()
         }
     }
 }

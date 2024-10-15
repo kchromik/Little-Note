@@ -28,6 +28,8 @@ public class ContentViewModel {
             return notes
         case .favorite:
             return notes.filter { $0.isFavourite }
+        @unknown default:
+            fatalError()
         }
     }
 
