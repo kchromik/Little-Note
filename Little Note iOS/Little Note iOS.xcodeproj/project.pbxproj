@@ -65,7 +65,7 @@
 		7451C32D2C64FDB000E63572 /* Little-Note-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little-Note-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7480F69B2C73715000899E30 /* FloatingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtons.swift; sourceTree = "<group>"; };
 		74B6657A2CBA62A500ED5441 /* EasterEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEggView.swift; sourceTree = "<group>"; };
-		74D80A3F2C64FD690011016D /* Little Note iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D80A3F2C64FD690011016D /* Little Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D80A422C64FD690011016D /* Little_Note_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_Note_iOSApp.swift; sourceTree = "<group>"; };
 		74D80A442C64FD690011016D /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
 		74EB7BF12C7C8DFA0023B767 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		74D80A402C64FD690011016D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74D80A3F2C64FD690011016D /* Little Note iOS.app */,
+				74D80A3F2C64FD690011016D /* Little Note.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74D80A3E2C64FD690011016D /* Little Note iOS */ = {
+		74D80A3E2C64FD690011016D /* Little Note */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74D80A4D2C64FD6A0011016D /* Build configuration list for PBXNativeTarget "Little Note iOS" */;
+			buildConfigurationList = 74D80A4D2C64FD6A0011016D /* Build configuration list for PBXNativeTarget "Little Note" */;
 			buildPhases = (
 				74D80A3B2C64FD690011016D /* Sources */,
 				74D80A3C2C64FD690011016D /* Frameworks */,
@@ -228,12 +228,12 @@
 			);
 			dependencies = (
 			);
-			name = "Little Note iOS";
+			name = "Little Note";
 			packageProductDependencies = (
 				74016C472C7F002400E93D2D /* FirebaseFirestoreCombine-Community */,
 			);
 			productName = "Little Note iOS";
-			productReference = 74D80A3F2C64FD690011016D /* Little Note iOS.app */;
+			productReference = 74D80A3F2C64FD690011016D /* Little Note.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +267,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74D80A3E2C64FD690011016D /* Little Note iOS */,
+				74D80A3E2C64FD690011016D /* Little Note */,
 			);
 		};
 /* End PBXProject section */
@@ -512,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74D80A4D2C64FD6A0011016D /* Build configuration list for PBXNativeTarget "Little Note iOS" */ = {
+		74D80A4D2C64FD6A0011016D /* Build configuration list for PBXNativeTarget "Little Note" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74D80A4E2C64FD6A0011016D /* Debug */,

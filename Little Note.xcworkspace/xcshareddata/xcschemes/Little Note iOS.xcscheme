@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "74D80A3E2C64FD690011016D"
-               BuildableName = "Little Note iOS.app"
-               BlueprintName = "Little Note iOS"
+               BuildableName = "Little Note.app"
+               BlueprintName = "Little Note"
                ReferencedContainer = "container:Little Note iOS/Little Note iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74D80A3E2C64FD690011016D"
-            BuildableName = "Little Note iOS.app"
-            BlueprintName = "Little Note iOS"
+            BuildableName = "Little Note.app"
+            BlueprintName = "Little Note"
             ReferencedContainer = "container:Little Note iOS/Little Note iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74D80A3E2C64FD690011016D"
-            BuildableName = "Little Note iOS.app"
-            BlueprintName = "Little Note iOS"
+            BuildableName = "Little Note.app"
+            BlueprintName = "Little Note"
             ReferencedContainer = "container:Little Note iOS/Little Note iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
