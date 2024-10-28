@@ -52,6 +52,7 @@ struct DetailView: View {
 
                         Spacer()
                     }
+                    .padding(.leading, 4)
                 }
             }
 
