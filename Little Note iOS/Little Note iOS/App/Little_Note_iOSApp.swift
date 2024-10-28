@@ -22,21 +22,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct Little_Note_iOSApp: App {
 
-    private let container: ModelContainer
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
-    init() {
-        do {
-            container = try ModelContainer(for: Note.self)
-        } catch {
-            fatalError("Failed to create ModelContainer for Note. Error: \(error.localizedDescription)")
-        }
-    }
-
     var body: some Scene {
         WindowGroup {
-            NotesScreen(modelContext: container.mainContext)
-                .modelContainer(container)
+            NotesScreen()
+                .modelContainer(for: Note.self)
         }
     }
 }

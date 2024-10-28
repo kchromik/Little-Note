@@ -10,9 +10,13 @@ import SwiftUI
 
 struct DetailView: View {
 
-    @Environment(\.dismiss) var dismiss
+    enum FocusedField {
+        case title, description
+    }
 
+    @Environment(\.dismiss) var dismiss
     @Bindable var note: Note
+    @FocusState private var focusedField: FocusedField?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -27,12 +31,14 @@ struct DetailView: View {
             )
             .font(.title)
             .foregroundStyle(.black)
+            .focused($focusedField, equals: .title)
 
             ZStack {
                 TextEditor(text: $note.text)
                     .font(.body)
                     .foregroundStyle(.black)
                     .scrollContentBackground(.hidden)
+                    .focused($focusedField, equals: .description)
 
                 if note.text.isEmpty {
                     VStack {
@@ -65,6 +71,11 @@ struct DetailView: View {
         .padding()
         .navigationTitle("Note Detail")
         .background(Color(red: 235.0/255.0, green: 223.0/255.0, blue: 75.0/255.0))
+        .onAppear {
+            if note.title.isEmpty {
+                focusedField = .title
+            }
+        }
     }
 }
 

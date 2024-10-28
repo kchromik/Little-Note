@@ -11,11 +11,23 @@ import SwiftUI
 
 struct NotesScreen: View {
 
-    @State private var viewModel: ContentViewModel
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Note.lastUpdated, order: .reverse) var notes: [Note]
+    @State var currentNote: Note?
+    @State var currentFilter: Filter = .all
+    @State var showingDetails = false
+    @State var showingSettings = false
+    @State var isEditing = false
 
-    init(modelContext: ModelContext) {
-        let viewModel = ContentViewModel(modelContext: modelContext)
-        _viewModel = State(initialValue: viewModel)
+    private var filteredNotes: [Note] {
+        switch currentFilter {
+        case .all:
+            return notes
+        case .favorite:
+            return notes.filter { $0.isFavourite }
+        @unknown default:
+            fatalError()
+        }
     }
 
     var body: some View {
@@ -27,11 +39,11 @@ struct NotesScreen: View {
                             ForEach(Filter.allCases, id: \.self) { filter in
                                 FilterView(
                                     filter: filter,
-                                    isActive: viewModel.currentFilter == filter
+                                    isActive: currentFilter == filter
                                 )
                                 .onTapGesture {
                                     withAnimation {
-                                        viewModel.currentFilter = filter
+                                        currentFilter = filter
                                     }
                                 }
                             }
@@ -41,7 +53,7 @@ struct NotesScreen: View {
                     Spacer()
 
                     Button {
-                        viewModel.showingSettings.toggle()
+                        showingSettings.toggle()
                     } label: {
                         Image(systemName: "gear")
                             .tint(.white)
@@ -56,16 +68,16 @@ struct NotesScreen: View {
 
                 Spacer()
 
-                if viewModel.filteredNotes.isEmpty {
-                    EmptyListView(activeFilter: viewModel.currentFilter)
+                if filteredNotes.isEmpty {
+                    EmptyListView(activeFilter: currentFilter)
                 } else {
                     List {
-                        ForEach(viewModel.filteredNotes) { note in
+                        ForEach(filteredNotes) { note in
                             Button {
-                                viewModel.isEditing = true
-                                viewModel.currentNote = note
+                                isEditing = true
+                                currentNote = note
                                 withAnimation {
-                                    viewModel.showingDetails.toggle()
+                                    showingDetails.toggle()
                                 }
                             } label: {
                                 Cell(note: note)
@@ -74,36 +86,58 @@ struct NotesScreen: View {
                             .listRowSeparator(.hidden)
                             .listRowInsets(.init(top: 8, leading: 8, bottom: 12, trailing: 8))
                         }
-                        .onDelete(perform: viewModel.deleteNote)
+                        .onDelete(perform: deleteNote)
 
                     }
                     .listStyle(.plain)
                     .listRowSpacing(0)
-                    .animation(.default, value: viewModel.filteredNotes)
+                    .animation(.default, value: filteredNotes)
                 }
             }
 
             VStack {
                 Spacer()
-                FloatingButtons(showingDetails: $viewModel.showingDetails)
+                FloatingButtons(showingDetails: $showingDetails)
             }
             .padding(.bottom, 12)
         }
-        .sheet(isPresented: $viewModel.showingDetails, onDismiss: viewModel.saveCurrentNoteIfNotEmpty) {
-            if let note = viewModel.currentNote {
+        .sheet(isPresented: $showingDetails, onDismiss: saveCurrentNoteIfNotEmpty) {
+            if let note = currentNote {
                 DetailView(note: note)
                     .presentationDetents([.medium, .large])
                     .presentationCornerRadius(32)
                     .presentationDragIndicator(.visible)
             }
         }
-        .fullScreenCover(isPresented: $viewModel.showingSettings) {
+        .fullScreenCover(isPresented: $showingSettings) {
             SettingsView()
         }
-        .onChange(of: viewModel.showingDetails) { oldValue, newValue in
-            if newValue && !viewModel.isEditing {
-                viewModel.currentNote = Note()
+        .onChange(of: showingDetails) { oldValue, newValue in
+            if newValue && !isEditing {
+                currentNote = Note()
             }
+        }
+    }
+
+    private func saveCurrentNoteIfNotEmpty() {
+        defer {
+            currentNote = nil
+        }
+        guard let currentNote = currentNote, !currentNote.text.isEmpty else {
+            return
+        }
+
+        if !isEditing {
+            modelContext.insert(currentNote)
+        }
+
+        isEditing = false
+    }
+
+    private func deleteNote(at offsets: IndexSet) {
+        for index in offsets {
+            let noteToDelete = notes[index]
+            modelContext.delete(noteToDelete)
         }
     }
 }
@@ -112,7 +146,7 @@ struct NotesScreen: View {
     do {
         let previewer = try Previewer()
 
-        return NotesScreen(modelContext: previewer.container.mainContext)
+        return NotesScreen()
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
