@@ -18,8 +18,15 @@ struct Cell: View {
                 Spacer()
                 VStack {
                     Image(systemName: note.isFavourite ? "heart.fill" : "heart")
+                        .symbolEffect(.bounce, value: note.isFavourite)
                         .frame(width: 24, height: 24)
                         .foregroundColor(.black)
+                        .padding(8)
+                        .onTapGesture {
+                            withAnimation {
+                                note.isFavourite.toggle()
+                            }
+                        }
                     Spacer()
                 }
             }
