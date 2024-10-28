@@ -27,7 +27,7 @@ struct DetailView: View {
             TextField("",
                       text: $note.customTitle,
                       prompt: Text("Enter title")
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color.black.opacity(0.5))
             )
             .font(.title)
             .foregroundStyle(.black)
@@ -44,7 +44,7 @@ struct DetailView: View {
                     VStack {
                         HStack {
                             Text("your note comes here...")
-                                .foregroundColor(Color.gray)
+                                .foregroundColor(Color.black.opacity(0.5))
                                 .padding(.top, 8)
 
                             Spacer()
