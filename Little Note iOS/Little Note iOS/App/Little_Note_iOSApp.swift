@@ -22,10 +22,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct Little_Note_iOSApp: App {
 
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
             NotesScreen()
-                .modelContainer(for: Note.self)
         }
+        .modelContainer(for: [Note.self])
     }
 }
