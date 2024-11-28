@@ -64,7 +64,7 @@ struct NotesScreen: View {
 
                         Button {
                             withAnimation {
-                                addNewNote()
+                                _ = addNewNote()
                             }
                         } label: {
                             Image(systemName: "plus.circle.fill")
@@ -89,6 +89,14 @@ struct NotesScreen: View {
                     .help("Info")
 
                     Spacer()
+
+                    HoverButton(imageName: "document.on.document") {
+                        guard let text = NSPasteboard.general.string(forType: .string) else { return }
+                        let note = addNewNote()
+                        note.text = text
+                    }
+                    .keyboardShortcut("m")
+                    .help("New note from clipboard")
 
                     HoverButton(imageName: "clipboard") {
                         let pasteboard = NSPasteboard.general
@@ -147,7 +155,7 @@ struct NotesScreen: View {
 
         .onAppear {
             if notes.isEmpty {
-                addNewNote()
+                _ = addNewNote()
             } else {
                 currentNoteID = notes.first?.id
             }
@@ -163,7 +171,7 @@ struct NotesScreen: View {
         }
         // Create and select a new note if no other notes are left
         if notes.isEmpty {
-            addNewNote()
+            _ = addNewNote()
         }
     }
 
@@ -175,7 +183,7 @@ struct NotesScreen: View {
         currentNoteID = note.id
     }
 
-    private func addNewNote() {
+    private func addNewNote() -> Note {
         if let currentNote = notes.first(where: { $0.id == currentNoteID }), currentNote.text.isEmpty {
             // Delete the current empty note before adding a new one
             delete(note: currentNote)
@@ -183,6 +191,7 @@ struct NotesScreen: View {
         let newNote = Note()
         modelContext.insert(newNote)
         currentNoteID = newNote.id
+        return newNote
     }
 }
 
