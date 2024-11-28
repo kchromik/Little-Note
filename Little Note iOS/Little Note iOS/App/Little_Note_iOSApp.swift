@@ -8,13 +8,12 @@
 import LittleBase
 import SwiftData
 import SwiftUI
-import FirebaseCore
+import WishKit
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-
+        WishKit.configure(with: "5D1641BE-1F4B-4167-84E6-F5A32074B842")
         return true
     }
 }

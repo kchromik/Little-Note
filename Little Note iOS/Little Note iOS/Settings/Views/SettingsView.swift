@@ -5,6 +5,7 @@
 //  Created by Kevin Chromik on 26.08.24.
 //
 
+import WishKit
 import SwiftUI
 
 struct SettingsView: View {
@@ -37,7 +38,7 @@ struct SettingsView: View {
                 ScrollView {
                     VStack {
 
-                        SettingsCell(imageName: "gift", text: "Vote on features") {
+                        SettingsCell(imageName: "gift", text: "Feature Requests") {
                             isShowingFeatureRoadmap.toggle()
                         }
 
@@ -62,8 +63,7 @@ struct SettingsView: View {
                     .presentationDetents([.medium, .large])
             }
             .sheet(isPresented: $isShowingFeatureRoadmap) {
-                FeaturesList()
-//                WebView(url: "https://insigh.to/b/little-note")
+                WishKit.FeedbackListView().withNavigation()
             }
         }
     }

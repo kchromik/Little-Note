@@ -24,9 +24,7 @@ struct TextPad: View {
                 self.note.text
             },
             set: {
-                withAnimation {
-                    note.lastUpdated = Date()
-                }
+                note.lastUpdated = Date()
                 note.text = $0
             }
         )
