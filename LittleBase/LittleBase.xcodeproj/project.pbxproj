@@ -14,6 +14,7 @@
 		7468D7512C9C43E900EB962B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468D7502C9C43E900EB962B /* Filter.swift */; };
 		748B9C9D2C6507D1007E8706 /* LittleBase.docc in Sources */ = {isa = PBXBuildFile; fileRef = 748B9C9C2C6507D1007E8706 /* LittleBase.docc */; };
 		748B9C9E2C6507D1007E8706 /* LittleBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 748B9C9B2C6507D1007E8706 /* LittleBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74AA83772CF9BDC700885D1A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA83762CF9BDC700885D1A /* Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		748B9C982C6507D1007E8706 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		748B9C9B2C6507D1007E8706 /* LittleBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LittleBase.h; sourceTree = "<group>"; };
 		748B9C9C2C6507D1007E8706 /* LittleBase.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LittleBase.docc; sourceTree = "<group>"; };
+		74AA83762CF9BDC700885D1A /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			children = (
 				74015AFF2C65115B00BBDB21 /* Previewer.swift */,
 				74016C4F2C7F1D8700E93D2D /* UserDefaults+Extension.swift */,
+				74AA83762CF9BDC700885D1A /* Localization.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				74015B002C65115B00BBDB21 /* Previewer.swift in Sources */,
 				7468D7512C9C43E900EB962B /* Filter.swift in Sources */,
+				74AA83772CF9BDC700885D1A /* Localization.swift in Sources */,
 				748B9C9D2C6507D1007E8706 /* LittleBase.docc in Sources */,
 				74016C502C7F1D8700E93D2D /* UserDefaults+Extension.swift in Sources */,
 				74015AFC2C650B6100BBDB21 /* Note.swift in Sources */,

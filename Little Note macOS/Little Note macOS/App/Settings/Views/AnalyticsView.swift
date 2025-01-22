@@ -20,7 +20,7 @@ struct AnalyticsView: View {
                 Text("\(note.numberOfWords)")
             }
             HStack {
-                Text("Created")
+                Text(NSLocalizedString("analytics_created_at", comment: ""))
                 Spacer()
                 Text("\(note.formattedCreatedAtDate)")
             }

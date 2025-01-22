@@ -152,7 +152,6 @@ struct NotesScreen: View {
                 }
             }
         }
-
         .onAppear {
             if notes.isEmpty {
                 _ = addNewNote()

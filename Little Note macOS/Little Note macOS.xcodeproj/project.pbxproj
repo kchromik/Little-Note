@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		748B9CA52C6507FD007E8706 /* LittleBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; };
 		748B9CA62C6507FD007E8706 /* LittleBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		74AA83752CF9BBB800885D1A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 74AA83742CF9BBB800885D1A /* Localizable.xcstrings */; };
 		74ACEB472CBBBC2600AE95FB /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB382CBBBC2600AE95FB /* NotesScreen.swift */; };
 		74ACEB482CBBBC2600AE95FB /* TextPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB392CBBBC2600AE95FB /* TextPad.swift */; };
 		74ACEB492CBBBC2600AE95FB /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACEB3B2CBBBC2600AE95FB /* AnalyticsView.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		748B9CA42C6507FD007E8706 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74AA83742CF9BBB800885D1A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		74ACEB352CBBBC2600AE95FB /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
 		74ACEB362CBBBC2600AE95FB /* Little_NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_NoteApp.swift; sourceTree = "<group>"; };
 		74ACEB382CBBBC2600AE95FB /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				74ACEB442CBBBC2600AE95FB /* Assets.xcassets */,
 				74ACEB452CBBBC2600AE95FB /* Little_Note.entitlements */,
 				74ACEB512CBBBC5300AE95FB /* Little-Note-Info.plist */,
+				74AA83742CF9BBB800885D1A /* Localizable.xcstrings */,
 			);
 			path = "Little Note macOS";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 74D4AA192A793EC400FE6D43;
 			packageReferences = (
@@ -230,6 +234,7 @@
 			files = (
 				74ACEB4F2CBBBC2600AE95FB /* Preview Assets.xcassets in Resources */,
 				74ACEB502CBBBC2600AE95FB /* Assets.xcassets in Resources */,
+				74AA83752CF9BBB800885D1A /* Localizable.xcstrings in Resources */,
 				74ACEB522CBBBC5300AE95FB /* Little-Note-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +319,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -370,6 +376,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
