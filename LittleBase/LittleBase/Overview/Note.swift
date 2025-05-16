@@ -80,7 +80,6 @@ extension Note: Equatable {
 
 extension Note: Identifiable {
 
-    @Attribute(.unique)
     public var id: String {
         uuidString
     }

@@ -15,6 +15,7 @@
 		748B9C9D2C6507D1007E8706 /* LittleBase.docc in Sources */ = {isa = PBXBuildFile; fileRef = 748B9C9C2C6507D1007E8706 /* LittleBase.docc */; };
 		748B9C9E2C6507D1007E8706 /* LittleBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 748B9C9B2C6507D1007E8706 /* LittleBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74AA83772CF9BDC700885D1A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA83762CF9BDC700885D1A /* Localization.swift */; };
+		74BDECE32DD71913008C5034 /* CloudKitSyncMonitor in Frameworks */ = {isa = PBXBuildFile; productRef = 74BDECE22DD71913008C5034 /* CloudKitSyncMonitor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BDECE32DD71913008C5034 /* CloudKitSyncMonitor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 748B9C8E2C6507D1007E8706;
+			packageReferences = (
+				74BDECE12DD71913008C5034 /* XCRemoteSwiftPackageReference "CloudKitSyncMonitor" */,
+			);
 			productRefGroup = 748B9C992C6507D1007E8706 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -406,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74BDECE12DD71913008C5034 /* XCRemoteSwiftPackageReference "CloudKitSyncMonitor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:ggruen/CloudKitSyncMonitor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74BDECE22DD71913008C5034 /* CloudKitSyncMonitor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74BDECE12DD71913008C5034 /* XCRemoteSwiftPackageReference "CloudKitSyncMonitor" */;
+			productName = CloudKitSyncMonitor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 748B9C8F2C6507D1007E8706 /* Project object */;
 }
