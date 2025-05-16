@@ -393,7 +393,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Little Note macOS/Little_Note.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 36;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Note macOS/Preview Content\"";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -424,7 +424,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Little Note macOS/Little_Note.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 36;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Note macOS/Preview Content\"";
 				ENABLE_HARDENED_RUNTIME = YES;
