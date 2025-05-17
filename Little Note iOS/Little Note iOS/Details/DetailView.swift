@@ -14,6 +14,7 @@ struct DetailView: View {
         case title, description
     }
 
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
     @Bindable var note: Note
     @FocusState private var focusedField: FocusedField?
@@ -76,6 +77,9 @@ struct DetailView: View {
             if note.title.isEmpty {
                 focusedField = .title
             }
+        }
+        .onDisappear {
+            try? modelContext.save()
         }
     }
 }

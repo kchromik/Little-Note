@@ -163,6 +163,7 @@ struct NotesScreen: View {
 
     private func delete(note: Note) {
         modelContext.delete(note)
+        try? modelContext.save()
         // Adjust the logic to ensure a new current note is selected if the current note was deleted
         if let index = notes.firstIndex(where: { $0.id == note.id }) {
             let newNoteIndex = index == 0 ? (notes.count > 1 ? 1 : 0) : index - 1
@@ -189,6 +190,7 @@ struct NotesScreen: View {
         }
         let newNote = Note()
         modelContext.insert(newNote)
+        try? modelContext.save()
         currentNoteID = newNote.id
         return newNote
     }

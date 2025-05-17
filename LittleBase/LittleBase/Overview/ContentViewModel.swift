@@ -60,6 +60,7 @@ public class ContentViewModel {
 
         if !isEditing {
             modelContext.insert(currentNote)
+            try? modelContext.save()
         }
 
         isEditing = false
@@ -70,6 +71,7 @@ public class ContentViewModel {
             let noteToDelete = notes[index]
             modelContext.delete(noteToDelete)
         }
+        try? modelContext.save()
         fetchData()
     }
 

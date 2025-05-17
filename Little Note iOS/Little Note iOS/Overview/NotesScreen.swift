@@ -129,6 +129,7 @@ struct NotesScreen: View {
 
         if !isEditing {
             modelContext.insert(currentNote)
+            try? modelContext.save()
         }
 
         isEditing = false
@@ -139,6 +140,7 @@ struct NotesScreen: View {
             let noteToDelete = notes[index]
             modelContext.delete(noteToDelete)
         }
+        try? modelContext.save()
     }
 }
 
