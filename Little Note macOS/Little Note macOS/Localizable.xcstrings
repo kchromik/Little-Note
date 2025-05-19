@@ -73,6 +73,9 @@
     "New note from clipboard" : {
 
     },
+    "Note title" : {
+
+    },
     "notes_overview_copied_to_clipboard" : {
       "extractionState" : "manual",
       "localizations" : {

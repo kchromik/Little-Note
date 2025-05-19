@@ -20,14 +20,9 @@ struct NotesScreen: View {
     @State private var showNoteInfo = false
     @State private var showCopiedMessage = false
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("usesLargeFont") var usesLargeFont: Bool = false
 
-    private var currentNote: Note {
-        if let id = currentNoteID, let note = notes.first(where: { $0.id == id }) {
-            return note
-        } else {
-            return notes.first ?? Note()
-        }
-    }
+    @State private var currentNote: Note = Note()
 
     var body: some View {
         ZStack {
@@ -76,7 +71,11 @@ struct NotesScreen: View {
                     .padding([.leading, .trailing])
                 }
                 .scrollIndicators(.hidden)
-                .padding([.top])
+                .padding(.top)
+                TextField("Note title", text: $currentNote.customTitle)
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .font(.system(size: usesLargeFont ? 20 : 16, weight: .bold, design: .rounded))
+                    .padding([.horizontal, .top])
                 TextPad(note: currentNote)
                     .padding()
                 HStack {
@@ -157,6 +156,13 @@ struct NotesScreen: View {
                 _ = addNewNote()
             } else {
                 currentNoteID = notes.first?.id
+            }
+        }
+        .onChange(of: currentNoteID) {
+            if let id = currentNoteID, let note = notes.first(where: { $0.id == id }) {
+                currentNote = note
+            } else {
+                currentNote = notes.first ?? Note()
             }
         }
     }
