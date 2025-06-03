@@ -8,22 +8,46 @@
 import SwiftUI
 import AppKit
 
+class WindowsController {
+    
+    private var windowControllers: [String: WindowController] = [:]
+    
+    func show<V: View>(
+        view: V,
+        for identifier: String
+    ) {
+        if let controller = windowControllers[identifier] {
+            controller.bringForward()
+            return
+        }
+        
+        let windowController = WindowController()
+        windowControllers[identifier] = windowController
+        
+        windowController.show(view: view) { [weak self] in
+            guard let self else { return }
+            self.windowControllers.removeValue(forKey: identifier)
+        }
+    }
+}
+
 class WindowController {
 
     private var window: NSWindow?
+    private var onClose: (() -> Void)?
 
     /// Shows a window with the given SwiftUI content
     func show<V: View>(
         view: V,
-        title: String = "",
-        allowResize: Bool = true
+        allowResize: Bool = true,
+        onClose: (() -> Void)? = nil
     ) {
-        if let existingWindow = window {
-            existingWindow.makeKeyAndOrderFront(nil)
+        if let window {
+            window.makeKeyAndOrderFront(nil)
             NSApp.activate(ignoringOtherApps: true)
             return
         }
-
+        self.onClose = onClose
         let hostingController = NSHostingController(rootView: view)
 
         // Determine initial size from the SwiftUI view's ideal size
@@ -34,7 +58,7 @@ class WindowController {
         let styleMask: NSWindow.StyleMask = [
             .titled,
             .closable,
-            allowResize ? .resizable : []
+            .resizable
         ]
 
         let newWindow = NSWindow(
@@ -44,9 +68,16 @@ class WindowController {
             defer: false
         )
 
+        let customToolbar = NSToolbar()
+        customToolbar.showsBaselineSeparator = false
+        newWindow.titlebarAppearsTransparent = true
+        newWindow.titleVisibility = .hidden
+        newWindow.toolbar = customToolbar
+
         newWindow.contentViewController = hostingController
-        newWindow.title = title
         newWindow.isReleasedWhenClosed = false
+        newWindow.minSize = NSSize(width: 300, height: 200)
+        newWindow.maxSize = NSSize(width: 1920, height: 1080)
         newWindow.center()
 
         newWindow.makeKeyAndOrderFront(nil)
@@ -59,7 +90,13 @@ class WindowController {
             object: newWindow,
             queue: .main
         ) { [weak self] _ in
+            self?.onClose?()
             self?.window = nil
         }
+    }
+
+    func bringForward() {
+        window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
 }

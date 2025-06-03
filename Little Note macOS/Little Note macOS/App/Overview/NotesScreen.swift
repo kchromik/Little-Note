@@ -22,7 +22,7 @@ struct NotesScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("selectedFont") var selectedFont: AvailableFonts = .system
     @AppStorage("fontSize") var fontSize: Int = 14
-    private let windowController: WindowController = .init()
+    @State var windowsController: WindowsController = .init()
     @State private var currentNote: Note = Note()
 
     var body: some View {
@@ -96,9 +96,12 @@ struct NotesScreen: View {
                     HoverButton(imageName: "document.on.document") {
                         let textPad = TextPad(note: currentNote)
                             .frame(width: 400, height: 400)
-                        windowController.show(view: textPad, title: currentNote.title, allowResize: true)
+                            .padding()
+
+                        windowsController
+                            .show(view: textPad, for: currentNote.id)
                     }
-                    .help("Info")
+                    .help("Open in window")
 
                     Spacer()
 
