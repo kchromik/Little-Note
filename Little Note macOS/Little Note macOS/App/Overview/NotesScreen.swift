@@ -22,7 +22,7 @@ struct NotesScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("selectedFont") var selectedFont: AvailableFonts = .system
     @AppStorage("fontSize") var fontSize: Int = 14
-
+    private let windowController: WindowController = .init()
     @State private var currentNote: Note = Note()
 
     var body: some View {
@@ -83,11 +83,20 @@ struct NotesScreen: View {
                 TextPad(note: currentNote)
                     .padding([.horizontal, .bottom])
                 HStack {
+                    
+
                     HoverButton(imageName: "exclamationmark.square") {
                         showNoteInfo.toggle()
                     }
                     .popover(isPresented: $showNoteInfo) {
                         AnalyticsView(note: currentNote)
+                    }
+                    .help("Info")
+
+                    HoverButton(imageName: "document.on.document") {
+                        let textPad = TextPad(note: currentNote)
+                            .frame(width: 400, height: 400)
+                        windowController.show(view: textPad, title: currentNote.title, allowResize: true)
                     }
                     .help("Info")
 
