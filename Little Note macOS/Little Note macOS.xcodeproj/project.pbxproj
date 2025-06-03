@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7420EDB02DDEECAB001B6B1C /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7420EDAF2DDEECAB001B6B1C /* WindowController.swift */; };
 		748B9CA52C6507FD007E8706 /* LittleBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; };
 		748B9CA62C6507FD007E8706 /* LittleBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 748B9CA42C6507FD007E8706 /* LittleBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		74AA83752CF9BBB800885D1A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 74AA83742CF9BBB800885D1A /* Localizable.xcstrings */; };
@@ -40,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7420EDAF2DDEECAB001B6B1C /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		748B9CA42C6507FD007E8706 /* LittleBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LittleBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AA83742CF9BBB800885D1A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		74ACEB352CBBBC2600AE95FB /* HotKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				74ACEB372CBBBC2600AE95FB /* Main */,
 				74ACEB3A2CBBBC2600AE95FB /* Overview */,
 				74ACEB402CBBBC2600AE95FB /* Settings */,
+				7420EDAF2DDEECAB001B6B1C /* WindowController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				74ACEB482CBBBC2600AE95FB /* TextPad.swift in Sources */,
 				74ACEB492CBBBC2600AE95FB /* AnalyticsView.swift in Sources */,
 				74ACEB4A2CBBBC2600AE95FB /* SettingsView.swift in Sources */,
+				7420EDB02DDEECAB001B6B1C /* WindowController.swift in Sources */,
 				74ACEB4B2CBBBC2600AE95FB /* Little_NoteApp.swift in Sources */,
 				74ACEB4C2CBBBC2600AE95FB /* HotKeyViewModel.swift in Sources */,
 				74ACEB4D2CBBBC2600AE95FB /* HoverButton.swift in Sources */,
@@ -393,7 +397,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Little Note macOS/Little_Note.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Note macOS/Preview Content\"";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -408,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kchromik.Little-Note";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -424,7 +428,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Little Note macOS/Little_Note.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Note macOS/Preview Content\"";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -439,7 +443,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kchromik.Little-Note";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

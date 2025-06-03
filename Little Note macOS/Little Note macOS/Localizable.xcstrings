@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "# of words" : {
 
     },
@@ -55,13 +58,16 @@
     "Delete" : {
 
     },
+    "Font" : {
+
+    },
+    "Font size" : {
+
+    },
     "Hotkey" : {
 
     },
     "Info" : {
-
-    },
-    "Large text" : {
 
     },
     "Launch at Login" : {

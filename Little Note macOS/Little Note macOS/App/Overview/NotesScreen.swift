@@ -20,7 +20,8 @@ struct NotesScreen: View {
     @State private var showNoteInfo = false
     @State private var showCopiedMessage = false
     @Environment(\.colorScheme) var colorScheme
-    @AppStorage("usesLargeFont") var usesLargeFont: Bool = false
+    @AppStorage("selectedFont") var selectedFont: AvailableFonts = .system
+    @AppStorage("fontSize") var fontSize: Int = 14
 
     @State private var currentNote: Note = Note()
 
@@ -33,7 +34,7 @@ struct NotesScreen: View {
                             Text(note.title.isEmpty ? "Note" : note.title)
                                 .font(.footnote)
                                 .opacity(note.title.isEmpty ? 0.6 : 1.0)
-                                .frame(width: 40)
+                                .frame(width: 48)
                                 .lineLimit(1)
                                 .foregroundColor(currentNoteID == note.id ? .white : .black)
                                 .padding(.horizontal, 8)
@@ -74,10 +75,13 @@ struct NotesScreen: View {
                 .padding(.top)
                 TextField("Note title", text: $currentNote.customTitle)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(.system(size: usesLargeFont ? 20 : 16, weight: .bold, design: .rounded))
+                    .font(selectedFont.activeFont(with: fontSize + 2))
+                    .bold()
                     .padding([.horizontal, .top])
+                    .padding(.leading, 4)
+
                 TextPad(note: currentNote)
-                    .padding()
+                    .padding([.horizontal, .bottom])
                 HStack {
                     HoverButton(imageName: "exclamationmark.square") {
                         showNoteInfo.toggle()

@@ -11,11 +11,12 @@ import SwiftUI
 struct TextPad: View {
 
     @Bindable var note: Note
-    @AppStorage("usesLargeFont") var usesLargeFont: Bool = false
+    @AppStorage("fontSize") var fontSize: Int = 14
+    @AppStorage("selectedFont") var selectedFont: AvailableFonts = .system
 
     var body: some View {
         TextEditor(text: bindingForTextEditor())
-            .font(.system(size: usesLargeFont ? 18 : 14, weight: .regular, design: .rounded))
+            .font(selectedFont.activeFont(with: fontSize))
     }
 
     private func bindingForTextEditor() -> Binding<String> {

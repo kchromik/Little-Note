@@ -14,6 +14,8 @@ struct SettingsView: View {
     }
 
     @StateObject var viewModel = SettingsViewModel()
+    @AppStorage("fontSize") var fontSize: Int = 14
+    @AppStorage("selectedFont") var selectedFont: AvailableFonts = .system
 
     var body: some View {
         VStack {
@@ -54,22 +56,52 @@ struct SettingsView: View {
 
             Divider()
 
+
             HStack {
-                Text(NSLocalizedString("Large text", comment: ""))
+                Text(NSLocalizedString("Font size", comment: ""))
                     .bold()
                 Spacer()
-                Button {
-                    withAnimation {
-                        viewModel.usesLargeFont.toggle()
+                Stepper("", value: $fontSize, in: 10...24)
+            }
+
+            Divider()
+
+            HStack {
+                Text(NSLocalizedString("Font", comment: ""))
+                    .bold()
+                Spacer()
+                Picker("", selection: $selectedFont) {
+                    ForEach(AvailableFonts.allCases) { font in
+                        Text(font.rawValue).tag(font)
                     }
-                } label: {
-                    Image(systemName: viewModel.usesLargeFont ? "checkmark.square.fill" : "square")
                 }
-                .buttonStyle(.plain)
+                .pickerStyle(.menu)
             }
         }
         .padding()
         .frame(width: 200)
+    }
+}
+
+enum AvailableFonts: String, CaseIterable, Identifiable {
+
+    var id: String {
+        self.rawValue
+    }
+
+    case system = "San Francisco"
+    case sfMono = "SF Mono"
+    case newYork = "New York"
+
+    func activeFont(with size: Int) -> Font {
+        switch self {
+        case .system:
+            return .system(size: CGFloat(size), weight: .regular, design: .rounded)
+        case .newYork:
+            return .system(size: CGFloat(size), weight: .regular, design: .serif)
+        case .sfMono:
+            return .system(size: CGFloat(size), weight: .regular, design: .monospaced)
+        }
     }
 }
 
