@@ -75,6 +75,11 @@ class WindowController {
         newWindow.toolbar = customToolbar
 
         newWindow.contentViewController = hostingController
+        
+        
+//        newWindow.backgroundColor = NSColor.systemGray
+        
+        
         newWindow.isReleasedWhenClosed = false
         newWindow.minSize = NSSize(width: 300, height: 200)
         newWindow.maxSize = NSSize(width: 1920, height: 1080)
