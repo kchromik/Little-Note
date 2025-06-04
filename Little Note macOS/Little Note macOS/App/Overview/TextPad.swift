@@ -17,7 +17,7 @@ struct TextPad: View {
     var body: some View {
         TextEditor(text: bindingForTextEditor())
             .font(selectedFont.activeFont(with: fontSize))
-            .scrollIndicators(.hidden)
+            .scrollIndicators(.never)
             .scrollContentBackground(.hidden)
     }
 

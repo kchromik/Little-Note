@@ -47,44 +47,51 @@ class WindowController {
             NSApp.activate(ignoringOtherApps: true)
             return
         }
+
         self.onClose = onClose
         let hostingController = NSHostingController(rootView: view)
 
-        // Determine initial size from the SwiftUI view's ideal size
-        let size = hostingController.view.intrinsicContentSize
-        let width = max(size.width, 300)
-        let height = max(size.height, 200)
+        let initialSize = NSSize(width: 400, height: 300)
 
         let styleMask: NSWindow.StyleMask = [
             .titled,
             .closable,
+            .miniaturizable,
             .resizable
         ]
 
         let newWindow = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: width, height: height),
+            contentRect: NSRect(origin: .zero, size: initialSize),
             styleMask: styleMask,
             backing: .buffered,
             defer: false
         )
 
+        // Optional toolbar styling
         let customToolbar = NSToolbar()
         customToolbar.showsBaselineSeparator = false
         newWindow.titlebarAppearsTransparent = true
         newWindow.titleVisibility = .hidden
         newWindow.toolbar = customToolbar
 
-        newWindow.contentViewController = hostingController
-        
-        
-//        newWindow.backgroundColor = NSColor.systemGray
-        
-        
-        newWindow.isReleasedWhenClosed = false
-        newWindow.minSize = NSSize(width: 300, height: 200)
-        newWindow.maxSize = NSSize(width: 1920, height: 1080)
-        newWindow.center()
+        // Embed hosting controller manually
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        let contentView = NSView()
+        contentView.addSubview(hostingController.view)
 
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            hostingController.view.topAnchor.constraint(equalTo: contentView.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+
+        newWindow.contentView = contentView
+
+        newWindow.setContentSize(initialSize)
+        newWindow.minSize = NSSize(width: 300, height: 200)
+
+        newWindow.center()
         newWindow.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
 
