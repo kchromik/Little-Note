@@ -89,12 +89,12 @@ class WindowController {
         newWindow.contentView = contentView
 
         newWindow.setContentSize(initialSize)
-        newWindow.minSize = NSSize(width: 300, height: 200)
+        newWindow.minSize = NSSize(width: 400, height: 280)
 
         newWindow.center()
         newWindow.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
-
+        newWindow.isReleasedWhenClosed = false
         self.window = newWindow
 
         NotificationCenter.default.addObserver(

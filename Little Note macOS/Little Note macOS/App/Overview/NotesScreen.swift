@@ -93,9 +93,9 @@ struct NotesScreen: View {
                     }
                     .help("Info")
 
-                    HoverButton(imageName: "document.on.document") {
+                    HoverButton(imageName: "arrow.up.backward.and.arrow.down.forward.square") {
                         let textPad = TextPad(note: currentNote)
-                            .frame(minWidth: 400, minHeight: 400)
+                            .frame(minWidth: 480, minHeight: 400)
                             .padding()
 
                         windowsController
