@@ -27,20 +27,21 @@ struct NotesScreen: View {
 
     var body: some View {
         ZStack {
-            VStack {
-                ScrollView(.horizontal) {
-                    HStack {
+            HStack {
+                ScrollView(.vertical) {
+                    VStack {
                         ForEach(notes, id: \.id) { note in
                             Text(note.title.isEmpty ? "Note" : note.title)
                                 .font(.footnote)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .opacity(note.title.isEmpty ? 0.6 : 1.0)
-                                .frame(width: 48)
+                                .frame(width: 60)
                                 .lineLimit(1)
                                 .foregroundColor(currentNoteID == note.id ? .white : .black)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
                                 .background(currentNoteID == note.id ? .blue : Color.teal)
-                                .cornerRadius(20)
+                                .cornerRadius(4)
                                 .onTapGesture {
                                     switchCurrentNoteTo(note)
                                 }
@@ -69,88 +70,90 @@ struct NotesScreen: View {
 
                         Spacer()
                     }
-                    .padding([.leading, .trailing])
+                    .padding(.horizontal)
                 }
                 .scrollIndicators(.hidden)
                 .padding(.top)
-                TextField("Note title", text: $currentNote.customTitle)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(selectedFont.activeFont(with: fontSize + 2))
-                    .bold()
-                    .padding([.horizontal, .top])
-                    .padding(.leading, 4)
 
-                TextPad(note: currentNote)
-                    .padding([.horizontal, .bottom])
-                HStack {
-                    
+                VStack {
+                    TextField("Note title", text: $currentNote.customTitle)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .font(selectedFont.activeFont(with: fontSize + 2))
+                        .bold()
+                        .padding([.horizontal, .top])
+                        .padding(.leading, 4)
 
-                    HoverButton(imageName: "exclamationmark.square") {
-                        showNoteInfo.toggle()
-                    }
-                    .popover(isPresented: $showNoteInfo) {
-                        AnalyticsView(note: currentNote)
-                    }
-                    .help("Info")
+                    TextPad(note: currentNote)
+                        .padding([.horizontal, .bottom])
 
-                    HoverButton(imageName: "arrow.up.backward.and.arrow.down.forward.square") {
-                        let textPad = TextPad(note: currentNote)
-                            .frame(minWidth: 480, minHeight: 400)
-                            .padding()
-
-                        windowsController
-                            .show(view: textPad, for: currentNote.id)
-                    }
-                    .help("Open in window")
-
-                    Spacer()
-
-                    HoverButton(imageName: "document.on.document") {
-                        guard let text = NSPasteboard.general.string(forType: .string) else { return }
-                        let note = addNewNote()
-                        note.text = text
-                    }
-                    .keyboardShortcut("m")
-                    .help("New note from clipboard")
-
-                    HoverButton(imageName: "clipboard") {
-                        let pasteboard = NSPasteboard.general
-                        pasteboard.clearContents()
-                        pasteboard.setString(currentNote.text, forType: .string)
-                        guard !showCopiedMessage else { return }
-                        withAnimation {
-                            showCopiedMessage = true
+                    HStack {
+                        HoverButton(imageName: "exclamationmark.square") {
+                            showNoteInfo.toggle()
                         }
+                        .popover(isPresented: $showNoteInfo) {
+                            AnalyticsView(note: currentNote)
+                        }
+                        .help("Info")
 
-                        // Hide the copied message after 2 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        HoverButton(imageName: "arrow.up.backward.and.arrow.down.forward.square") {
+                            let textPad = TextPad(note: currentNote)
+                                .frame(minWidth: 480, minHeight: 400)
+                                .padding()
+
+                            windowsController
+                                .show(view: textPad, for: currentNote.id)
+                        }
+                        .help("Open in window")
+
+                        Spacer()
+
+                        HoverButton(imageName: "document.on.document") {
+                            guard let text = NSPasteboard.general.string(forType: .string) else { return }
+                            let note = addNewNote()
+                            note.text = text
+                        }
+                        .keyboardShortcut("m")
+                        .help("New note from clipboard")
+
+                        HoverButton(imageName: "clipboard") {
+                            let pasteboard = NSPasteboard.general
+                            pasteboard.clearContents()
+                            pasteboard.setString(currentNote.text, forType: .string)
+                            guard !showCopiedMessage else { return }
                             withAnimation {
-                                showCopiedMessage = false
+                                showCopiedMessage = true
                             }
+
+                            // Hide the copied message after 2 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation {
+                                    showCopiedMessage = false
+                                }
+                            }
+
                         }
+                        .help("Copy to clipboard")
 
-                    }
-                    .help("Copy to clipboard")
+                        HoverButton(imageName: "gear.circle") {
+                            showSettings.toggle()
+                        }
+                        .popover(isPresented: $showSettings) {
+                            SettingsView()
+                        }
+                        .help("Settings")
 
-                    HoverButton(imageName: "gear.circle") {
-                        showSettings.toggle()
+                        Button {
+                            NSApplication.shared.terminate(self)
+                        } label: {
+                            Image(systemName: "power")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                        .help("Shutdown")
                     }
-                    .popover(isPresented: $showSettings) {
-                        SettingsView()
-                    }
-                    .help("Settings")
-
-                    Button {
-                        NSApplication.shared.terminate(self)
-                    } label: {
-                        Image(systemName: "power")
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.red)
-                    .help("Shutdown")
+                    .padding(.horizontal)
+                    .padding(.bottom, 4)
                 }
-                .padding(.horizontal)
-                .padding(.bottom, 4)
             }
 
             if showCopiedMessage {

@@ -20,7 +20,7 @@ struct Little_NoteApp: App {
             "Little Note", systemImage: "pencil.line")
         {
             NotesScreen()
-                .frame(width: 400, height: 320)
+                .frame(width: 520, height: 400)
                 .modelContainer(for: Note.self)
         }
         .menuBarExtraStyle(.window)
