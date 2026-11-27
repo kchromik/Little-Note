@@ -1,0 +1,24 @@
+{
+  "originHash" : "68dbe4c0a3122a7459614d08a42817ea66c52b46aab6bdc209100a2f40592cdb",
+  "pins" : [
+    {
+      "identity" : "hotkey",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/soffes/HotKey",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4d02d80de143d69b7eeb5962729591a157a57ede"
+      }
+    },
+    {
+      "identity" : "menubarextraaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:orchetect/MenuBarExtraAccess.git",
+      "state" : {
+        "revision" : "f5896b47e15e114975897354c7e1082c51a2bffd",
+        "version" : "1.0.5"
+      }
+    }
+  ],
+  "version" : 3
+}

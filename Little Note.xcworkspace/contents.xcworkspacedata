@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Little Note iOS/Little Note iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Little Note macOS/Little Note macOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LittleBase/LittleBase.xcodeproj">
+   </FileRef>
+</Workspace>
